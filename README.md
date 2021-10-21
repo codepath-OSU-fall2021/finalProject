@@ -1,5 +1,3 @@
-===
-
 # Eighth Wonder Finance
 
 ## Table of Contents
@@ -13,7 +11,6 @@
 An application where users can simulate trading stocks with a starting balance of fake money. There will be a screen to research stock prices as well as a screen to show the users current balance with profit and loss of stocks that they bought. Additionally there will be a tab to show the users profile.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
 - **Category:** Finance / Gaming
 - **Mobile:** This app will be primarily developed for mobile devices. Future consideration may be given to a desktop version.
 - **Story:** Stock trading game where users can simulate trading stocks with a starting balance of fake money. Users can research stock prices, see the current balance of their holdings, and show their user profile.
@@ -39,7 +36,6 @@ An application where users can simulate trading stocks with a starting balance o
 * Being able to log in using Facebook
 * Using faceID to unlock the application
 * Ability to search for stock information using auto-complete based on ticker symbol, name, or sector
-* 
 
 ### 2. Screen Archetypes
 

@@ -8,14 +8,14 @@
 
 ## Overview
 ### Description
-An application where users can simulate trading stocks with a starting balance of fake money. There will be a screen to research stock prices as well as a screen to show the users current balance with profit and loss of stocks that they bought. Additionally there will be a tab to show the users profile.
+An application where users can simulate trading stocks with a starting balance of fake money. There will be a screen to research stock prices as well as a screen to show the user's current balance with profit and loss of stocks that they bought. Additionally, there will be a tab to show the user's profile.
 
 ### App Evaluation
 - **Category:** Finance / Gaming
-- **Mobile:** This app will be primarily developed for mobile devices. Future consideration may be given to a desktop version.
-- **Story:** Stock trading game where users can simulate trading stocks with a starting balance of fake money. Users can research stock prices, see the current balance of their holdings, and show their user profile.
+- **Mobile:** This app will be developed primarily for mobile devices. Future consideration may be given to a desktop version.
+- **Story:** Stock trading game where users can simulate trading stocks with a starting balance of fake money. Users can research stock prices, see the current balance of their holdings, and view their user profile.
 - **Market:** Any individual interested in stock trading could download this app and play the game. 
-- **Habit:** The app could be used as often as the user wanted depending on their appetite for trading stocks and checking in on their balance (i.e. gains and losses). 
+- **Habit:** The app could be used as often as the user wants depending on their appetite for trading stocks and checking in on their balance (i.e. gains and losses). 
 - **Scope:** Our first objective is to allow users to research stock prices using the ticker symbol for a publicly traded company. This could evolve into a stock trading game with users competing in seasonal tournaments for prizes, similar to fantasy football apps. Large potential for use with brokerage accounts, electronic trading platforms, or social media platforms such as Facebook.  
 
 ## Product Spec

@@ -81,16 +81,50 @@ Optional:
 [This section will be completed in Unit 9]
 ### Models
 [Add table of models]
+#### User
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the User (default field) |
+   | username      | String   | username |
+   | password      | String   | password |
+   | balance       | Number   | balance of cash in users account |
+   | holdings      | Array of StockSnapshots | stocks currently held by user |
+   | trades        | Array of Trades | array of trades made by user |
+   | profileImage  | File     | image that user uploads |
+
+#### StockSnapshot
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the StockSnapshot (default field) |
+   | user          | Pointer to User | user that holds this stock |
+   | symbol        | String   | stock symbol |
+   | price         | Number   | stock price at time of creation |
+   | quantity      | Number   | stock quantity held by user |
+   | createdAt     | DateTime | time StockSnapshot was created (default field) |
+
+#### Trade
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | objectId      | String   | unique id for the Trade (default field) |
+   | user          | Pointer to User | user that made the trade |
+   | stock         | Pointer to StockSnapshot | stock snapshot |
+   | tradeType     | String | Buy or Sell |
+   | quantity      | Number   | Number of stocks bought or sold  |
+   | createdAt     | DateTime | time Trade was created (default field) |
+
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
-- API Endpoint https://cloud.iexapis.com/stable
-- GET /stock/{symbol}/quote - Gets current price, name and stock info (cost 1 credit)
-- GET /stock/{symbol}/company - Gets company description paragraph and info (cost 10 credits)
-- GET /stock/market/list/{list-type} - Gets list of 10 quotes based on list-type (mostactive, gainers, losers) (cost of the quotes ~10 credits)
-- GET /stock/{symbol}/logo - Gets logo for symbol (1 credit)
-- GET /search/{fragment} - Gets top 10 matches for search fragment (1 credit)
-
-
+- API Endpoint 
+- Base URL - [https://cloud.iexapis.com/stable](https://cloud.iexapis.com/stable)
+   HTTP Verb | Endpoint | Description | Credits
+   ----------|----------|------------|------------
+    `GET`    | /stock/{symbol}/quote | current price, name and stock info | 1
+    `GET`    | /stock/{symbol}/company | company description paragraph and info | 10
+    `GET`    | /stock/market/list/{list-type} | list of 10 quotes based on list-type (mostactive, gainers, losers) | ~10
+    `GET`    | /stock/{symbol}/logo | logo for symbol | 1
 

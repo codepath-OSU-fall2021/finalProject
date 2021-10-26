@@ -85,4 +85,12 @@ Optional:
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+- API Endpoint https://cloud.iexapis.com/stable
+- GET /stock/{symbol}/quote - Gets current price, name and stock info (cost 1 credit)
+- GET /stock/{symbol}/company - Gets company description paragraph and info (cost 10 credits)
+- GET /stock/market/list/{list-type} - Gets list of 10 quotes based on list-type (mostactive, gainers, losers) (cost of the quotes ~10 credits)
+- GET /stock/{symbol}/logo - Gets logo for symbol (1 credit)
+- GET /search/{fragment} - Gets top 10 matches for search fragment (1 credit)
+
+
 

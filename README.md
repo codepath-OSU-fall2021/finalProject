@@ -113,10 +113,59 @@ Optional:
    | stock         | Pointer to StockSnapshot | stock snapshot |
    | tradeType     | String | Buy or Sell |
    | quantity      | Number   | Number of stocks bought or sold  |
+   | sellPrice     | Number   | Price of the stock when sold  |
    | createdAt     | DateTime | time Trade was created (default field) |
 
 ### Networking
 - [Add list of network requests by screen ]
+- Home Feed Screen
+   - (Read/GET) Query all StockSnapshots where user is currentUser
+      ```swift
+      let query = PFQuery(className:"StockSnapshot")
+      query.whereKey("user", equalTo: currentUser)
+      query.order(byDescending: "symbol")
+      query.findObjectsInBackground { (stocks: [PFObject]?, error: Error?) in
+         if let error = error { 
+            print(error.localizedDescription)
+         } else if let stocks = stocks {
+            print("Successfully retrieved \(stocks.count) stock snapshots for \(currentUser).")
+         // TODO: Calculate each symbols stock quantity and total cost to purchase
+         }
+      }
+      ```
+   - (Read/GET) Query API for each symbol's current price and calculate users current value held
+- Sell Screen
+   - (Create/POST) Create a trade (or trades) of stock snapshots
+   - (Read/GET) Get stock logo from API
+   - (Update/PUT) Update StockSnapshot quantities
+   - (Update/PUT) Remove from User.holdings is StockSnapshot.quantity is zero
+- Buy Screen
+   - (Create/POST) Create a StockSnapshot
+   - (Read/GET) Get stock logo from API
+   - (Create/POST) Create a Trade
+   - (Update/PUT) Add StockSnapshot and Trade to user
+- Research
+   - (Read/GET) Top stocks from API
+   - (Read/GET) Get logos for top stocks in API
+   - (Read/GET) Stock searched for in API (to see if it exists)
+- Research Detail
+   - (Read/GET) Stock information from API
+- Profile Screen
+   - (Read/GET) Query user information
+      ```swift
+      let query = PFQuery(className:"User")
+      query.whereKey("objectId", equalTo: currentUser)
+      query.includeKeys(["trades", "trades.stock"])
+      query.order(byDescending: "createdAt")
+      query.findObjectsInBackground { (stocks: [PFObject]?, error: Error?) in
+         if let error = error { 
+            print(error.localizedDescription)
+         } else if let trades = trades {
+            print("Successfully retrieved \(trades.count) stock snapshots for \(currentUser).")
+         // TODO: Display trades made by user
+         }
+      }
+      ```
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
 - API Endpoint 

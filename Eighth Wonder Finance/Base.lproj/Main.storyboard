@@ -216,20 +216,51 @@
                                     <constraint firstAttribute="width" constant="160" id="mVh-A5-E4Q"/>
                                 </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Website Link" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="htj-DA-nt8">
+                                <rect key="frame" x="20" y="335" width="374" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" link="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="M2M-4G-NdN"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QER-Q6-bhe">
+                                <rect key="frame" x="20" y="385" width="374" height="408"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aB5-yd-Nt6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="aB5-yd-Nt6" firstAttribute="trailing" secondItem="QER-Q6-bhe" secondAttribute="trailing" constant="20" id="4eC-Kp-BvI"/>
+                            <constraint firstItem="htj-DA-nt8" firstAttribute="leading" secondItem="aB5-yd-Nt6" secondAttribute="leading" constant="20" id="5jh-E0-dIn"/>
                             <constraint firstItem="1zc-u8-no2" firstAttribute="top" secondItem="aB5-yd-Nt6" secondAttribute="top" constant="20" id="9Yl-6i-wbc"/>
+                            <constraint firstItem="htj-DA-nt8" firstAttribute="top" secondItem="0t6-6F-26z" secondAttribute="bottom" constant="20" id="CuP-kv-1Cc"/>
+                            <constraint firstItem="QER-Q6-bhe" firstAttribute="top" secondItem="htj-DA-nt8" secondAttribute="bottom" constant="20" id="GcK-pS-q4B"/>
                             <constraint firstItem="0t6-6F-26z" firstAttribute="top" secondItem="1zc-u8-no2" secondAttribute="bottom" constant="20" id="JA7-1x-apW"/>
                             <constraint firstItem="0t6-6F-26z" firstAttribute="centerX" secondItem="kLQ-2c-1A7" secondAttribute="centerX" id="Jgl-4H-H3x"/>
+                            <constraint firstItem="aB5-yd-Nt6" firstAttribute="trailing" secondItem="htj-DA-nt8" secondAttribute="trailing" constant="20" id="Kbe-VQ-x31"/>
+                            <constraint firstItem="htj-DA-nt8" firstAttribute="centerX" secondItem="kLQ-2c-1A7" secondAttribute="centerX" id="OgA-n0-mbi"/>
+                            <constraint firstItem="QER-Q6-bhe" firstAttribute="leading" secondItem="aB5-yd-Nt6" secondAttribute="leading" constant="20" id="QNE-03-iBG"/>
                             <constraint firstItem="1zc-u8-no2" firstAttribute="centerX" secondItem="kLQ-2c-1A7" secondAttribute="centerX" id="S4N-cK-5ww"/>
+                            <constraint firstItem="aB5-yd-Nt6" firstAttribute="bottom" secondItem="QER-Q6-bhe" secondAttribute="bottom" constant="20" id="iY5-5N-n2s"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2hd-gv-bXF"/>
                     <connections>
+                        <outlet property="companyDescriptionView" destination="QER-Q6-bhe" id="Mai-ch-1gq"/>
                         <outlet property="companyLogoImage" destination="0t6-6F-26z" id="PZ9-H7-UQ6"/>
                         <outlet property="companyNameLabel" destination="1zc-u8-no2" id="kW8-Ek-vdY"/>
+                        <outlet property="websiteLink" destination="htj-DA-nt8" id="iZu-hJ-fTM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBO-HY-89c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -445,6 +476,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -223,9 +223,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OW7-Mv-yP6">
-                                <rect key="frame" x="20" y="433" width="359" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OW7-Mv-yP6">
+                                <rect key="frame" x="40" y="711" width="334" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log Out">
                                     <backgroundConfiguration key="background">
@@ -247,9 +246,8 @@
                                     <action selector="onDarkModeSegControl:" destination="3UW-zI-eEh" eventType="valueChanged" id="GX3-KU-nhN"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYm-hs-7hN">
-                                <rect key="frame" x="20" y="742" width="359" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYm-hs-7hN">
+                                <rect key="frame" x="40" y="762" width="334" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Reset Button">
                                     <backgroundConfiguration key="background">
@@ -263,10 +261,21 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MXx-1I-yiD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="RYm-hs-7hN" firstAttribute="top" secondItem="OW7-Mv-yP6" secondAttribute="bottom" constant="20" id="2Ti-Cb-v1E"/>
+                            <constraint firstItem="MXx-1I-yiD" firstAttribute="trailing" secondItem="RYm-hs-7hN" secondAttribute="trailing" constant="40" id="CyW-e4-kI2"/>
+                            <constraint firstItem="OW7-Mv-yP6" firstAttribute="leading" secondItem="MXx-1I-yiD" secondAttribute="leading" constant="40" id="Hap-8Q-q6E"/>
+                            <constraint firstItem="RYm-hs-7hN" firstAttribute="centerX" secondItem="UKN-ej-Bdt" secondAttribute="centerX" id="I4z-8h-OrJ"/>
+                            <constraint firstItem="RYm-hs-7hN" firstAttribute="leading" secondItem="MXx-1I-yiD" secondAttribute="leading" constant="40" id="P9f-bF-DMa"/>
+                            <constraint firstItem="OW7-Mv-yP6" firstAttribute="centerX" secondItem="UKN-ej-Bdt" secondAttribute="centerX" id="PB9-TF-0I1"/>
+                            <constraint firstItem="MXx-1I-yiD" firstAttribute="trailing" secondItem="OW7-Mv-yP6" secondAttribute="trailing" constant="40" id="Pvo-Ee-sTQ"/>
+                            <constraint firstItem="MXx-1I-yiD" firstAttribute="bottom" secondItem="RYm-hs-7hN" secondAttribute="bottom" constant="20" id="ste-AL-jpt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="L8V-wT-gfV"/>
                     <connections>
                         <outlet property="darkmodeSegControl" destination="A8j-mc-FsJ" id="pjq-gs-YW9"/>
+                        <outlet property="usernameLabel" destination="LxQ-FG-IOZ" id="PYe-dn-hdI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ThA-D6-PRm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -14,10 +14,11 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var darkmodeSegControl: UISegmentedControl!
     
+    @IBOutlet weak var usernameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        usernameLabel.text = PFUser.current()?.username
         // Do any additional setup after loading the view.
     }
     

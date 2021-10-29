@@ -7,8 +7,10 @@
 
 import UIKit
 
-class ResearchStockCell: UITableViewCell {
-
+class ResearchStockCell: UITableViewCell {    
+    @IBOutlet weak var stockName: UILabel!
+    @IBOutlet weak var currentPrice: UILabel!
+    @IBOutlet weak var percentChange: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

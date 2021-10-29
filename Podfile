@@ -6,7 +6,7 @@ target 'Eighth Wonder Finance' do
   use_frameworks!
 
   # Pods for Eighth Wonder Finance
-  pod 'Alamofire'
+  pod 'AFNetworking'
 
   target 'Eighth Wonder FinanceTests' do
     inherit! :search_paths

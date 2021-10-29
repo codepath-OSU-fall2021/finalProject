@@ -171,6 +171,7 @@
                                             <outlet property="currentPrice" destination="daW-lp-mAa" id="ne2-xm-r8U"/>
                                             <outlet property="percentChange" destination="D9N-yd-etL" id="2Rh-iR-Ffz"/>
                                             <outlet property="stockName" destination="WBM-PX-f9f" id="NI4-4H-RTa"/>
+                                            <segue destination="d1K-nY-SI4" kind="show" identifier="researchDetailSegue" id="3Tf-Km-ruV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -193,6 +194,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="trs-9r-KXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-430.43478260869568" y="1759.8214285714284"/>
+        </scene>
+        <!--Research Detail View Controller-->
+        <scene sceneID="Hqa-fi-bjm">
+            <objects>
+                <viewController id="d1K-nY-SI4" customClass="ResearchDetailViewController" customModule="Eighth_Wonder_Finance" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kLQ-2c-1A7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zc-u8-no2">
+                                <rect key="frame" x="125" y="108" width="164" height="27"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StockChart" translatesAutoresizingMaskIntoConstraints="NO" id="0t6-6F-26z">
+                                <rect key="frame" x="127" y="155" width="160" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="7xj-KE-Eu6"/>
+                                    <constraint firstAttribute="width" constant="160" id="mVh-A5-E4Q"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aB5-yd-Nt6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1zc-u8-no2" firstAttribute="top" secondItem="aB5-yd-Nt6" secondAttribute="top" constant="20" id="9Yl-6i-wbc"/>
+                            <constraint firstItem="0t6-6F-26z" firstAttribute="top" secondItem="1zc-u8-no2" secondAttribute="bottom" constant="20" id="JA7-1x-apW"/>
+                            <constraint firstItem="0t6-6F-26z" firstAttribute="centerX" secondItem="kLQ-2c-1A7" secondAttribute="centerX" id="Jgl-4H-H3x"/>
+                            <constraint firstItem="1zc-u8-no2" firstAttribute="centerX" secondItem="kLQ-2c-1A7" secondAttribute="centerX" id="S4N-cK-5ww"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2hd-gv-bXF"/>
+                    <connections>
+                        <outlet property="companyLogoImage" destination="0t6-6F-26z" id="PZ9-H7-UQ6"/>
+                        <outlet property="companyNameLabel" destination="1zc-u8-no2" id="kW8-Ek-vdY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zBO-HY-89c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-430.43478260869568" y="2483.7053571428569"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="zO8-mb-ZdL">
@@ -394,6 +436,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="StockChart" width="85" height="87"/>
         <image name="chart.xyaxis.line" catalog="system" width="128" height="101"/>
         <image name="growth" width="320" height="213"/>
         <image name="house" catalog="system" width="128" height="106"/>

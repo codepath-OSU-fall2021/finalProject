@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		246F92D0AC1584908E3A8D2D /* Pods_Eighth_Wonder_Finance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3030E82E70815B714004BCB7 /* Pods_Eighth_Wonder_Finance.framework */; };
+		723744FD272C929100E0043D /* ResearchDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723744FC272C929100E0043D /* ResearchDetailViewController.swift */; };
 		723CFA342729F7E1007D92B1 /* ResearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723CFA332729F7E1007D92B1 /* ResearchViewController.swift */; };
 		723CFA362729F86E007D92B1 /* ResearchStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723CFA352729F86E007D92B1 /* ResearchStockCell.swift */; };
 		9990F8602B706CF37C8C505F /* Pods_Eighth_Wonder_Finance_Eighth_Wonder_FinanceUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA3C4FCECBC601F07F84FC6 /* Pods_Eighth_Wonder_Finance_Eighth_Wonder_FinanceUITests.framework */; };
@@ -52,6 +53,7 @@
 		47EDAE52F7F99ED753E83EB8 /* Pods-Eighth Wonder Finance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eighth Wonder Finance.debug.xcconfig"; path = "Target Support Files/Pods-Eighth Wonder Finance/Pods-Eighth Wonder Finance.debug.xcconfig"; sourceTree = "<group>"; };
 		4CA3C4FCECBC601F07F84FC6 /* Pods_Eighth_Wonder_Finance_Eighth_Wonder_FinanceUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Eighth_Wonder_Finance_Eighth_Wonder_FinanceUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		621F633949C93320962A7A5B /* Pods-Eighth Wonder FinanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eighth Wonder FinanceTests.release.xcconfig"; path = "Target Support Files/Pods-Eighth Wonder FinanceTests/Pods-Eighth Wonder FinanceTests.release.xcconfig"; sourceTree = "<group>"; };
+		723744FC272C929100E0043D /* ResearchDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchDetailViewController.swift; sourceTree = "<group>"; };
 		723CFA332729F7E1007D92B1 /* ResearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchViewController.swift; sourceTree = "<group>"; };
 		723CFA352729F86E007D92B1 /* ResearchStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchStockCell.swift; sourceTree = "<group>"; };
 		B6F3F77AF919C9CAAFD096B5 /* Pods-Eighth Wonder Finance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eighth Wonder Finance.release.xcconfig"; path = "Target Support Files/Pods-Eighth Wonder Finance/Pods-Eighth Wonder Finance.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,7 +132,6 @@
 				CDFD0E2FA729FB9FC86A3F0F /* Pods-Eighth Wonder FinanceTests.debug.xcconfig */,
 				621F633949C93320962A7A5B /* Pods-Eighth Wonder FinanceTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -171,6 +172,7 @@
 				F54E7BDB27263C0E0056F7BA /* LaunchScreen.storyboard */,
 				F54E7BD927263C0E0056F7BA /* Assets.xcassets */,
 				F54E7BDE27263C0E0056F7BA /* Info.plist */,
+				723744FC272C929100E0043D /* ResearchDetailViewController.swift */,
 			);
 			path = "Eighth Wonder Finance";
 			sourceTree = "<group>";
@@ -444,6 +446,7 @@
 			files = (
 				F54E7C01272645CD0056F7BA /* LoginViewController.swift in Sources */,
 				F54E7BD127263C080056F7BA /* AppDelegate.swift in Sources */,
+				723744FD272C929100E0043D /* ResearchDetailViewController.swift in Sources */,
 				F54E7BD327263C090056F7BA /* SceneDelegate.swift in Sources */,
 				F54E7C03272645F70056F7BA /* HomeViewController.swift in Sources */,
 				723CFA342729F7E1007D92B1 /* ResearchViewController.swift in Sources */,

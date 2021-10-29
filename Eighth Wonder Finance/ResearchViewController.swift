@@ -47,6 +47,23 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "researchDetailSegue" {
+            let destination = segue.destination as! ResearchDetailViewController
+            let indexPath = tableView.indexPathForSelectedRow!
+            let selectedStock = stocks[indexPath.row] as StockInfo
+            destination.companyNameToDisplay = selectedStock.companyName
+            destination.companySymbol = selectedStock.symbol
+            
+//            getLogo(symbol: selectedStock.symbol)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
     func getStockInfo(successCallback: @escaping ([StockInfo]) -> ()) {
         // https://learnappmaking.com/urlsession-swift-networking-how-to/
         let url = URL(string: "https://cloud.iexapis.com/stable/stock/market/list/mostactive?token=pk_246252e7872a41e4bb86d8c546d5e510")!

@@ -78,6 +78,8 @@ Optional:
 
 ### [BONUS] Interactive Prototype
 
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/81477294/139752630-66ae738b-9660-481b-b3dd-95d8c8ced710.gif)
+
 ## Schema 
 
 ### Models

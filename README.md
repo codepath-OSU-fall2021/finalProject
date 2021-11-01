@@ -166,8 +166,9 @@ Optional:
       ```
 
 
-##### API Endpoint 
+##### IEX Cloud API 
 - Base URL - [https://cloud.iexapis.com/stable](https://cloud.iexapis.com/stable)
+
    HTTP Verb | Endpoint | Description | Credits
    ----------|----------|------------|------------
     `GET`    | /stock/{symbol}/quote | current price, name and stock info | 1

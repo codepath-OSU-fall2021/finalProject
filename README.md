@@ -70,17 +70,16 @@ Optional:
 * Setting - > Log-out
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="drawn_wireframe.jpeg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
+<img src="digital_wireframe.png" width=600>
 
 ### [BONUS] Interactive Prototype
 
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
 #### User
 
    | Property      | Type     | Description |
@@ -117,7 +116,6 @@ Optional:
    | createdAt     | DateTime | time Trade was created (default field) |
 
 ### Networking
-- [Add list of network requests by screen ]
 - Home Feed Screen
    - (Read/GET) Query all StockSnapshots where user is currentUser
       ```swift

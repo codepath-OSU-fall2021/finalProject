@@ -73,7 +73,9 @@ Optional:
 <img src="drawn_wireframe.jpeg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
-<img src="digital_wireframe.png" width=600>
+<img src="digital_wireframe.png" width=600> 
+![image](https://user-images.githubusercontent.com/81477294/139751047-1ab9de59-8600-49e9-ba55-dddfc30718b3.png)
+
 
 ### [BONUS] Interactive Prototype
 

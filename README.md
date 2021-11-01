@@ -78,7 +78,7 @@ Optional:
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
 #### User
 
@@ -164,9 +164,9 @@ Optional:
          }
       }
       ```
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
-- API Endpoint 
+
+
+##### API Endpoint 
 - Base URL - [https://cloud.iexapis.com/stable](https://cloud.iexapis.com/stable)
    HTTP Verb | Endpoint | Description | Credits
    ----------|----------|------------|------------

@@ -210,6 +210,7 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
     }
     
 
+
     /*
     // MARK: - Navigation
 

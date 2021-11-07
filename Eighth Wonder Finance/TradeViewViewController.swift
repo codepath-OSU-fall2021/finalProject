@@ -39,7 +39,7 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func onConfirm(_ sender: Any) {
         let totalPrice = Float(numberOfShares) * sharePrice
-        let roundedPrice = round(totalPrice * 100) / 100
+        let roundedPrice = round(totalPrice * 100) / 100.0
         let query = PFQuery(className: "Stock")
         query.whereKey("user", equalTo: user)
         query.whereKey("symbol", equalTo: symbol)
@@ -107,8 +107,9 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
         }
         
         let balance = self.user?["balance"] as! Float
-        let roundedBalance = round(balance * 100) / 100
-        balanceLabel.text = "Balance: $\(roundedBalance)"
+        let roundedBalance = round(balance * 100) / 100.0
+        let formattedBalance = formatAsCurrency(dollarAmount: roundedBalance)
+        balanceLabel.text = "Balance: \(formattedBalance)"
         
     }
     
@@ -131,14 +132,16 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
     func handleQuantityChange() {
         let totalPrice = Float(self.numberOfShares) * self.sharePrice
         let roundedPrice = round(totalPrice * 100) / 100
-        totalPriceLabel.text = "Total price: $\(roundedPrice)"
+        let formattedPrice = formatAsCurrency(dollarAmount: roundedPrice)
+        totalPriceLabel.text = "Total price: \(formattedPrice)"
         
     }
     
     func handleStockInfo(stockArray: StockInfo) -> Void {
         sharePrice = stockArray.latestPrice
         let roundedPrice = round(sharePrice * 100) / 100
-        shareDisplayLabel.text = "Price per share: $\(roundedPrice)"
+        let formattedPrice = formatAsCurrency(dollarAmount: roundedPrice)
+        shareDisplayLabel.text = "Price per share: \(formattedPrice)"
     }
     
     func getStockQuote(successCallback: @escaping (StockInfo) -> ()) {
@@ -175,6 +178,7 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        numberOfSharesInput.backgroundColor = .white
         self.numberOfSharesInput.delegate = self
         
         self.symbolLabel.text = self.symbol
@@ -197,7 +201,13 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
-    
+    func formatAsCurrency(dollarAmount: Float) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currency
+        let formatedNumber = numberFormatter.string(from: NSNumber(value: dollarAmount))
+        
+        return formatedNumber!
+    }
     
 
     /*

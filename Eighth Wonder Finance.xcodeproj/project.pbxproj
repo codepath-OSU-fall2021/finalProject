@@ -23,6 +23,7 @@
 		F54E7BF427263C0F0056F7BA /* Eighth_Wonder_FinanceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E7BF327263C0F0056F7BA /* Eighth_Wonder_FinanceUITestsLaunchTests.swift */; };
 		F54E7C01272645CD0056F7BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E7C00272645CD0056F7BA /* LoginViewController.swift */; };
 		F54E7C03272645F70056F7BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E7C02272645F70056F7BA /* HomeViewController.swift */; };
+		F58243F7273859DB004FC193 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = F58243F6273859DB004FC193 /* search.json */; };
 		F5AA1C82273776510024EECD /* stock_names.json in Resources */ = {isa = PBXBuildFile; fileRef = F5AA1C80273776510024EECD /* stock_names.json */; };
 		F5AA1C83273776510024EECD /* stock_symbols.json in Resources */ = {isa = PBXBuildFile; fileRef = F5AA1C81273776510024EECD /* stock_symbols.json */; };
 		F5AA1C8527377BEB0024EECD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AA1C8427377BEB0024EECD /* SearchViewController.swift */; };
@@ -79,6 +80,7 @@
 		F54E7BF327263C0F0056F7BA /* Eighth_Wonder_FinanceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Eighth_Wonder_FinanceUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F54E7C00272645CD0056F7BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F54E7C02272645F70056F7BA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F58243F6273859DB004FC193 /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
 		F5AA1C80273776510024EECD /* stock_names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stock_names.json; sourceTree = "<group>"; };
 		F5AA1C81273776510024EECD /* stock_symbols.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stock_symbols.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		F5AA1C8427377BEB0024EECD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			children = (
 				F54E7BD627263C090056F7BA /* Main.storyboard */,
 				F54E7BDB27263C0E0056F7BA /* LaunchScreen.storyboard */,
+				F58243F6273859DB004FC193 /* search.json */,
 				F5AA1C80273776510024EECD /* stock_names.json */,
 				F5AA1C81273776510024EECD /* stock_symbols.json */,
 				F54E7BD027263C080056F7BA /* AppDelegate.swift */,
@@ -326,6 +329,7 @@
 				F54E7BDD27263C0E0056F7BA /* LaunchScreen.storyboard in Resources */,
 				F5AA1C83273776510024EECD /* stock_symbols.json in Resources */,
 				F54E7BDA27263C0E0056F7BA /* Assets.xcassets in Resources */,
+				F58243F7273859DB004FC193 /* search.json in Resources */,
 				F54E7BD827263C090056F7BA /* Main.storyboard in Resources */,
 				F5AA1C82273776510024EECD /* stock_names.json in Resources */,
 			);

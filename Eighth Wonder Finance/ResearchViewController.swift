@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ResearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     struct StockInfo : Codable {
@@ -21,6 +22,14 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
             case latestPrice
             case marketCap
             case changePercent
+        }
+    }
+    
+    struct Logo : Codable {
+        var url: String
+        
+        enum CodingKeys: String, CodingKey {
+            case url
         }
     }
     
@@ -44,8 +53,33 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
         } else {
             cell.percentChange.textColor = UIColor.systemGreen
         }
+        
+        // Logo
+        let url = URL(string: "https://cloud.iexapis.com/stable/stock/\(stock.symbol)/logo?token=pk_246252e7872a41e4bb86d8c546d5e510")!
+        print(url)
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        let task = session.dataTask(with: request) { (data, response, error) in
+            // This runs when network request returns
+            if let error = error {
+                print(error.localizedDescription)
+            } else if let data = data {
+                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                print(dataDictionary)
+                
+                let urlPath = dataDictionary["url"] as? String
+                if (urlPath != nil) && (urlPath != "") {
+                    let logoURL = URL(string: urlPath!)
+                    cell.stockLogo.af.setImage(withURL: logoURL!)
+                } else {
+                    // No logo
+                }
+            }
+        }
+        task.resume()
         return cell
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "researchDetailSegue" {

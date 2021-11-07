@@ -166,13 +166,13 @@
 				F54E7C02272645F70056F7BA /* HomeViewController.swift */,
 				723CFA332729F7E1007D92B1 /* ResearchViewController.swift */,
 				723CFA352729F86E007D92B1 /* ResearchStockCell.swift */,
+				723744FC272C929100E0043D /* ResearchDetailViewController.swift */,
 				F5DC5AE8272A27A8009BA7E8 /* TradeViewViewController.swift */,
 				F5DC5AEA272A28BA009BA7E8 /* ProfileViewController.swift */,
 				F54E7BD627263C090056F7BA /* Main.storyboard */,
 				F54E7BDB27263C0E0056F7BA /* LaunchScreen.storyboard */,
 				F54E7BD927263C0E0056F7BA /* Assets.xcassets */,
 				F54E7BDE27263C0E0056F7BA /* Info.plist */,
-				723744FC272C929100E0043D /* ResearchDetailViewController.swift */,
 			);
 			path = "Eighth Wonder Finance";
 			sourceTree = "<group>";

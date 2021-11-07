@@ -11,6 +11,8 @@ class ResearchStockCell: UITableViewCell {
     @IBOutlet weak var stockName: UILabel!
     @IBOutlet weak var currentPrice: UILabel!
     @IBOutlet weak var percentChange: UILabel!
+    @IBOutlet weak var stockLogo: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

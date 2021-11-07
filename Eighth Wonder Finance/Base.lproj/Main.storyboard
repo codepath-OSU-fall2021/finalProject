@@ -124,11 +124,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="t7O-uz-yYv">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="t7O-uz-yYv">
+                                <rect key="frame" x="0.0" y="-39" width="414" height="813"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResearchStockCell" rowHeight="118" id="mbd-a5-fjg" customClass="ResearchStockCell" customModule="Eighth_Wonder_Finance" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResearchStockCell" rowHeight="118" id="mbd-a5-fjg" customClass="ResearchStockCell" customModule="Eighth_Wonder_Finance" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mbd-a5-fjg" id="3QQ-Qr-saP">
@@ -136,40 +136,59 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stock Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBM-PX-f9f">
-                                                    <rect key="frame" x="28" y="19" width="358" height="21"/>
+                                                    <rect key="frame" x="126" y="11" width="250" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="250" id="d8R-Kz-l2f"/>
+                                                        <constraint firstAttribute="height" constant="20" id="enI-gS-hep"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current price: $14.32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daW-lp-mAa">
-                                                    <rect key="frame" x="28" y="48" width="358" height="21"/>
+                                                    <rect key="frame" x="126" y="39" width="250" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="IvQ-d6-TGT"/>
+                                                        <constraint firstAttribute="width" constant="250" id="uHt-5H-v8M"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="digitalicon" translatesAutoresizingMaskIntoConstraints="NO" id="IYj-o7-9W9">
+                                                    <rect key="frame" x="8" y="4" width="110" height="110"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="110" id="N0i-Ca-lzz"/>
+                                                        <constraint firstAttribute="height" constant="110" id="qsm-v0-I0h"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.32%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9N-yd-etL">
-                                                    <rect key="frame" x="28" y="77" width="358" height="21"/>
+                                                    <rect key="frame" x="126" y="67" width="250" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="ZVa-ry-JPP"/>
+                                                        <constraint firstAttribute="width" constant="250" id="bCU-7m-5zi"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="D9N-yd-etL" secondAttribute="bottom" constant="8" id="BPm-4d-vNn"/>
-                                                <constraint firstItem="D9N-yd-etL" firstAttribute="top" secondItem="daW-lp-mAa" secondAttribute="bottom" constant="8" id="YnB-3h-pzr"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="D9N-yd-etL" secondAttribute="trailing" constant="8" id="aHL-wY-iqn"/>
-                                                <constraint firstItem="daW-lp-mAa" firstAttribute="leading" secondItem="3QQ-Qr-saP" secondAttribute="leadingMargin" constant="8" id="gSY-lA-ZY7"/>
-                                                <constraint firstItem="WBM-PX-f9f" firstAttribute="leading" secondItem="3QQ-Qr-saP" secondAttribute="leadingMargin" constant="8" id="kmY-TY-N1A"/>
-                                                <constraint firstItem="daW-lp-mAa" firstAttribute="top" secondItem="WBM-PX-f9f" secondAttribute="bottom" constant="8" id="rus-QM-Rdo"/>
-                                                <constraint firstItem="D9N-yd-etL" firstAttribute="leading" secondItem="3QQ-Qr-saP" secondAttribute="leadingMargin" constant="8" id="sXt-cs-7mD"/>
-                                                <constraint firstItem="WBM-PX-f9f" firstAttribute="top" secondItem="3QQ-Qr-saP" secondAttribute="topMargin" constant="8" id="tBb-qU-AVS"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="WBM-PX-f9f" secondAttribute="trailing" constant="8" id="ui9-fb-j9h"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="daW-lp-mAa" secondAttribute="trailing" constant="8" id="z8h-76-czr"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="IYj-o7-9W9" secondAttribute="bottom" constant="4" id="016-hz-alV"/>
+                                                <constraint firstItem="D9N-yd-etL" firstAttribute="top" secondItem="daW-lp-mAa" secondAttribute="bottom" constant="8" id="8eF-AQ-iop"/>
+                                                <constraint firstItem="IYj-o7-9W9" firstAttribute="leading" secondItem="3QQ-Qr-saP" secondAttribute="leading" constant="8" id="H5f-B1-fP7"/>
+                                                <constraint firstItem="WBM-PX-f9f" firstAttribute="leading" secondItem="IYj-o7-9W9" secondAttribute="trailing" constant="8" symbolic="YES" id="HRW-Pn-0N3"/>
+                                                <constraint firstItem="WBM-PX-f9f" firstAttribute="top" secondItem="3QQ-Qr-saP" secondAttribute="topMargin" id="I9M-0E-cEN"/>
+                                                <constraint firstItem="IYj-o7-9W9" firstAttribute="top" secondItem="3QQ-Qr-saP" secondAttribute="top" constant="4" id="kz3-nO-PHm"/>
+                                                <constraint firstItem="daW-lp-mAa" firstAttribute="top" secondItem="WBM-PX-f9f" secondAttribute="bottom" constant="8" id="qQv-Tz-cHY"/>
+                                                <constraint firstItem="D9N-yd-etL" firstAttribute="leading" secondItem="IYj-o7-9W9" secondAttribute="trailing" constant="8" id="rSd-ru-V1D"/>
+                                                <constraint firstItem="daW-lp-mAa" firstAttribute="leading" secondItem="IYj-o7-9W9" secondAttribute="trailing" constant="8" id="uTn-ck-0ev"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="currentPrice" destination="daW-lp-mAa" id="ne2-xm-r8U"/>
                                             <outlet property="percentChange" destination="D9N-yd-etL" id="2Rh-iR-Ffz"/>
+                                            <outlet property="stockLogo" destination="IYj-o7-9W9" id="eSX-kp-Vwa"/>
                                             <outlet property="stockName" destination="WBM-PX-f9f" id="NI4-4H-RTa"/>
                                             <segue destination="d1K-nY-SI4" kind="show" identifier="researchDetailSegue" id="3Tf-Km-ruV"/>
                                         </connections>
@@ -559,6 +578,7 @@
     <resources>
         <image name="StockChart" width="85" height="87"/>
         <image name="chart.xyaxis.line" catalog="system" width="128" height="101"/>
+        <image name="digitalicon" width="130" height="129"/>
         <image name="growth" width="320" height="213"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>

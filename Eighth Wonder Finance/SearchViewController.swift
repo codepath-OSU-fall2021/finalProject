@@ -17,14 +17,15 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     var symbols:[String] = Array()
     var originalSymbols:[String] = Array()
+    let searchData = DataLoader().searchData
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        symbols.append("MSFT")
-        symbols.append("AAPL")
-        symbols.append("AMZN")
-        symbols.append("TSLA")
+        
+        for searchkey in searchData.keys {
+            symbols.append(searchkey)
+        }
         
         for symbol in symbols {
             originalSymbols.append(symbol)
@@ -83,7 +84,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let tradeViewController = self.storyboard?.instantiateViewController(withIdentifier: "TradeView") as! TradeViewViewController
-        tradeViewController.symbol = symbols[indexPath.row]
+        let userSearchResult = symbols[indexPath.row]
+        tradeViewController.symbol = searchData[userSearchResult] as! String
         self.navigationController?.pushViewController(tradeViewController, animated: true)
     }
     

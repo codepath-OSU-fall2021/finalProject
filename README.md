@@ -69,6 +69,12 @@ Optional:
 * Forced Log-in -> Account creation if no login is available
 * Setting - > Log-out
 
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+
+
 ## Wireframes
 <img src="drawn_wireframe.jpeg" width=600>
 

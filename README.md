@@ -73,6 +73,7 @@ Optional:
 
 Here's a walkthrough of implemented user stories:
 
+![Eighth Wonder](https://user-images.githubusercontent.com/81477294/140847262-4ca36c53-b9fa-4532-b6e2-f4490665ef06.gif)
 
 
 ## Wireframes

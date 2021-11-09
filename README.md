@@ -39,14 +39,25 @@ An application where users can simulate trading stocks with a starting balance o
 
 ### 2. Screen Archetypes
 
-* Stock Information
+* Login Screen
+  * [x] User login to the application
+  * [x] User can signup for the application
+* Home Screen
+  * [ ] User can view the current balance of their portfolio
+  * [ ] User can click on a stock with a segue to the trade page to sell
+  * [ ] User can see the profit and loss of the shares they own
+* Research Screen
+   * [x] User can research stock information by ticker symbol
+   * [x] User can click a stock to get more information
+   * [ ] User can click on a buy button with segue to trade page
+* Trade Screen
    * [x] User can see current price of stocks as well as a logo of the company
    * [x] User can select a company to view more information as well as purchase shares
-* Research Page
-   * [x] User can research stock information by ticker symbol
-* User Profile
+* User Screen
    * [ ] User can view the current balance of their portfolio
-   * [ ] User can sell shares of a stock they own
+   * [ ] User can reset the game
+   * [x] User can activate dark mode
+   * [x] User can logout
 
 ### 3. Navigation
 
@@ -54,20 +65,19 @@ An application where users can simulate trading stocks with a starting balance o
 
 * Home tab
 * Research tab
-* Profile tab
-
-Optional:
-* Setting tab
+* Trade tab
+* Profile/settings tab tab
 
 **Flow Navigation** (Screen to Screen)
 
 * Login -> Main screen
 * Stock Information - > Stock information and and Purchase button
-* Profile -> User can sell shares of a stock they own
+* Research page -> User can buy shares of a stock
+* Home page -> User can sell shares of a stock they own
+* Setting - > Log-out
 
 Optional:
 * Forced Log-in -> Account creation if no login is available
-* Setting - > Log-out
 
 ## Video Walkthrough
 

@@ -25,28 +25,28 @@ An application where users can simulate trading stocks with a starting balance o
 **Required Must-have Stories**
 
 
-* User can see current price of stocks as well as a logo of the company
-* User can research stock information by ticker symbol
-* User can purchase and sell shares of stock using a hypothetical balance of cash
-* User can view the current balance of their portfolio
+* [x] User can see current price of stocks as well as a logo of the company
+* [x] User can research stock information by ticker symbol
+* [ ] User can purchase and sell shares of stock using a hypothetical balance of cash
+* [x] User can view the current balance of their portfolio
 
 
 **Optional Nice-to-have Stories**
 
-* Being able to log in using Facebook
-* Using faceID to unlock the application
-* Ability to search for stock information using auto-complete based on ticker symbol, name, or sector
+* [ ] Being able to log in using Facebook
+* [ ] Using faceID to unlock the application
+* [x] Ability to search for stock information using auto-complete based on ticker symbol or name
 
 ### 2. Screen Archetypes
 
 * Stock Information
-   * User can see current price of stocks as well as a logo of the company
-   * User can select a company to view more information as well as purchase shares
+   * [x] User can see current price of stocks as well as a logo of the company
+   * [x] User can select a company to view more information as well as purchase shares
 * Research Page
-   * User can research stock information by ticker symbol
+   * [x] User can research stock information by ticker symbol
 * User Profile
-   * User can view the current balance of their portfolio
-   * User can sell shares of a stock they own
+   * [ ] User can view the current balance of their portfolio
+   * [ ] User can sell shares of a stock they own
 
 ### 3. Navigation
 

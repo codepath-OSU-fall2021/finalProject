@@ -488,20 +488,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OqS-NR-lNx">
-                                <rect key="frame" x="20" y="117" width="374" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OqS-NR-lNx">
+                                <rect key="frame" x="10" y="114" width="394" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" returnKeyType="done"/>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gY2-dD-yqv">
-                                <rect key="frame" x="20" y="159" width="374" height="654"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gY2-dD-yqv">
+                                <rect key="frame" x="0.0" y="153" width="414" height="660"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select From Below:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZM-I2-Q7Y">
-                                <rect key="frame" x="20" y="88" width="147" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select From Below:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZM-I2-Q7Y">
+                                <rect key="frame" x="10" y="88" width="147" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -509,6 +506,17 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ibM-gS-CTT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ibM-gS-CTT" firstAttribute="trailing" secondItem="gY2-dD-yqv" secondAttribute="trailing" id="Q9A-eq-pzS"/>
+                            <constraint firstItem="1ZM-I2-Q7Y" firstAttribute="top" secondItem="ibM-gS-CTT" secondAttribute="top" id="YN8-oS-Z6x"/>
+                            <constraint firstItem="ibM-gS-CTT" firstAttribute="trailing" secondItem="OqS-NR-lNx" secondAttribute="trailing" constant="10" id="atl-NV-E5w"/>
+                            <constraint firstItem="1ZM-I2-Q7Y" firstAttribute="leading" secondItem="ibM-gS-CTT" secondAttribute="leading" constant="10" id="c6S-Ml-hfl"/>
+                            <constraint firstItem="gY2-dD-yqv" firstAttribute="bottom" secondItem="ibM-gS-CTT" secondAttribute="bottom" id="daL-zk-2jL"/>
+                            <constraint firstItem="OqS-NR-lNx" firstAttribute="leading" secondItem="ibM-gS-CTT" secondAttribute="leading" constant="10" id="eGU-Fm-GQx"/>
+                            <constraint firstItem="gY2-dD-yqv" firstAttribute="top" secondItem="OqS-NR-lNx" secondAttribute="bottom" constant="5" id="fbE-rd-sQw"/>
+                            <constraint firstItem="OqS-NR-lNx" firstAttribute="top" secondItem="1ZM-I2-Q7Y" secondAttribute="bottom" constant="5" id="gT6-7C-cZx"/>
+                            <constraint firstItem="gY2-dD-yqv" firstAttribute="leading" secondItem="ibM-gS-CTT" secondAttribute="leading" id="sBy-QF-Xr5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Qi4-2o-1fR"/>
                     <connections>

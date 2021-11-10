@@ -34,6 +34,7 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     var stocks: [StockInfo] = []
+    var logos: [String:Logo] = [:]
     
     @IBOutlet weak var tableView: UITableView!
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,29 +55,12 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
             cell.percentChange.textColor = UIColor.systemGreen
         }
         
-        // Logo
-        let url = URL(string: "https://cloud.iexapis.com/stable/stock/\(stock.symbol)/logo?token=pk_246252e7872a41e4bb86d8c546d5e510")!
-        print(url)
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        let task = session.dataTask(with: request) { (data, response, error) in
-            // This runs when network request returns
-            if let error = error {
-                print(error.localizedDescription)
-            } else if let data = data {
-                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                print(dataDictionary)
-                
-                let urlPath = dataDictionary["url"] as? String
-                if (urlPath != nil) && (urlPath != "") {
-                    let logoURL = URL(string: urlPath!)
-                    cell.stockLogo.af.setImage(withURL: logoURL!)
-                } else {
-                    // No logo
-                }
-            }
-        }
-        task.resume()
+        let logo = logos[stock.symbol]
+        let logoURLString = logo?.url ?? "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/PETZ.png" //this is default logo
+        let logoURL = URL(string: logoURLString)!
+        
+        cell.stockLogo.af.setImage(withURL: logoURL)
+        
         return cell
     }
     
@@ -88,8 +72,6 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
             let selectedStock = stocks[indexPath.row] as StockInfo
             destination.companyNameToDisplay = selectedStock.companyName
             destination.companySymbol = selectedStock.symbol
-            
-//            getLogo(symbol: selectedStock.symbol)
         }
     }
     
@@ -97,10 +79,45 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    func getLogos() {
+        // https://stackoverflow.com/questions/35906568/wait-until-swift-for-loop-with-asynchronous-network-requests-finishes-executing
+        let myGroup = DispatchGroup()
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        for stock in self.stocks {
+            myGroup.enter()
+            let url = URL(string: "https://cloud.iexapis.com/stable/stock/\(stock.symbol)/logo?token=pk_246252e7872a41e4bb86d8c546d5e510")!
+            let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+            let task = session.dataTask(with: request) { (data, response, error) in
+                // This runs when network request returns
+                if let error = error {
+                    print(error.localizedDescription)
+                } else if let data = data {
+                    let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                    print(dataDictionary)
+                    
+                    let urlPath = dataDictionary["url"] as? String
+                    if (urlPath != nil) && (urlPath != "") {
+                        let logo = Logo(url: urlPath!)
+                        self.logos[stock.symbol] = logo
+                    } else {
+                        let logo = Logo(url: "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/PETZ.png")
+                        self.logos[stock.symbol] = logo
+                    }
+                    myGroup.leave()
+                }
+            }
+            task.resume()
+        }
+        myGroup.notify(queue: .main) {
+            print("finished all requests")
+            self.tableView.reloadData()
+        }
+    }
+    
     
     func getStockInfo(successCallback: @escaping ([StockInfo]) -> ()) {
         // https://learnappmaking.com/urlsession-swift-networking-how-to/
-        let url = URL(string: "https://cloud.iexapis.com/stable/stock/market/list/mostactive?token=pk_246252e7872a41e4bb86d8c546d5e510")!
+        let url = URL(string: "https://cloud.iexapis.com/stable/stock/market/list/gainers?token=pk_246252e7872a41e4bb86d8c546d5e510")!
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         
         let task = session.dataTask(with: url) { data, response, error in
@@ -119,7 +136,6 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
             }
             do {
                 let stockResponse = try JSONDecoder().decode([StockInfo].self, from: data!) as [StockInfo]
-//                print(stockResponse)
                 successCallback(stockResponse)
             } catch {
                 print("JSON error: \(error.localizedDescription)")
@@ -131,6 +147,7 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
     
     func handleStockInfo(stockArray: [StockInfo]) -> Void {
         stocks = stockArray
+        getLogos()
         tableView.reloadData()
     }
     

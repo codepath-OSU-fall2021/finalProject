@@ -16,10 +16,23 @@ class ProfileViewController: UIViewController {
     
     @IBOutlet weak var usernameLabel: UILabel!
     
+    var user: PFObject? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameLabel.text = PFUser.current()?.username
         // Do any additional setup after loading the view.
+        
+        let user = PFUser.current()
+        if user != nil {
+            do {
+                let query = try PFQuery.getUserObject(withId: user!.objectId!)
+                self.user = query
+            } catch {
+                print(error)
+            }
+        }
+        
     }
     
 
@@ -96,7 +109,31 @@ class ProfileViewController: UIViewController {
         refreshAlert.addAction(UIAlertAction(title: "Yes", style: .default,
                                              handler: {(action: UIAlertAction!) in
             print("User pressed yes")
-            // add code to reset
+            // reset balance to 50,000
+            self.user!["balance"] = 50000
+            self.user?.saveInBackground()
+            
+            // delete Stocks
+            let query = PFQuery(className: "Stock")
+            query.whereKey("user", equalTo: self.user)
+            query.findObjectsInBackground {(objects: [PFObject]?, error: Error?) in
+                if let error = error {
+                    // Log details of the failure
+                    print(error.localizedDescription)
+                } else if let objects = objects {
+                    // The find succeeded.
+                    print("Successfully retrieved \(objects.count) stocks.")
+                    if objects.count == 0 {
+                        print("Nothing to delete")
+                    }
+                    if objects.count > 0 {
+                        for object in objects {
+                            print(object)
+                            object.deleteInBackground()
+                        }
+                    }
+                }
+            }
         }))
         refreshAlert.addAction(UIAlertAction(title: "No", style: .cancel,
                                              handler: {(action: UIAlertAction!) in
@@ -106,6 +143,5 @@ class ProfileViewController: UIViewController {
         present(refreshAlert, animated: true, completion: nil)
         
     }
-    
-    
+
 }

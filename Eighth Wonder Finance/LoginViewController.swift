@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
         super.viewDidAppear(animated)
         let currentUser = PFUser.current()
         if currentUser != nil {
-            self.performSegue(withIdentifier: "loignSegue", sender: nil)
+            self.performSegue(withIdentifier: "loginSegue", sender: nil)
         }
     }
     
@@ -60,6 +60,7 @@ class LoginViewController: UIViewController {
         user.signUpInBackground { (success, error) in
             if success {
                 print("Successfull sign up")
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
             } else {
                 print("Error: \(error?.localizedDescription)")
             }

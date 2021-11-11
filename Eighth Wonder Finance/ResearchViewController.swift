@@ -55,8 +55,9 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
             cell.percentChange.textColor = UIColor.systemGreen
         }
         
+        // "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/PETZ.png" //this is default logo
         let logo = logos[stock.symbol]
-        let logoURLString = logo?.url ?? "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/PETZ.png" //this is default logo
+        var logoURLString = logo?.url ?? "https://media.baamboozle.com/uploads/images/407556/1624173273_168575_gif-url.gif"
         let logoURL = URL(string: logoURLString)!
         
         cell.stockLogo.af.setImage(withURL: logoURL)
@@ -93,14 +94,15 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
                     print(error.localizedDescription)
                 } else if let data = data {
                     let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                    print(dataDictionary)
                     
                     let urlPath = dataDictionary["url"] as? String
+            
                     if (urlPath != nil) && (urlPath != "") {
                         let logo = Logo(url: urlPath!)
                         self.logos[stock.symbol] = logo
                     } else {
-                        let logo = Logo(url: "https://storage.googleapis.com/iexcloud-hl37opg/api/logos/PETZ.png")
+                        let logo = Logo(url: "https://media.baamboozle.com/uploads/images/407556/1624173273_168575_gif-url.gif")
+
                         self.logos[stock.symbol] = logo
                     }
                     myGroup.leave()

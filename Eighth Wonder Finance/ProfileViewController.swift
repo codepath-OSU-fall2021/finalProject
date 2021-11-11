@@ -20,6 +20,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkDarkMode()
         usernameLabel.text = PFUser.current()?.username
         // Do any additional setup after loading the view.
         
@@ -50,10 +51,8 @@ class ProfileViewController: UIViewController {
   
     @IBAction func onDarkModeSegControl(_ sender: Any) {
         // toggle dark mode segmented control
-        // FYI - currently only changes profile tab
-        // figured out how to apply it to window similar to logout
-        // but, right now it doesn't persist. to be researched I think
-        // persistence has to do with @appdata, but I need to look into this.
+        let userDefaults = UserDefaults.standard
+        
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let delegate = windowScene.delegate as? SceneDelegate else { return }
         
@@ -62,13 +61,15 @@ class ProfileViewController: UIViewController {
         case 0:
             print("Light")
             delegate.window?.overrideUserInterfaceStyle = .light
+            userDefaults.set(false, forKey: "darkMode")
         case 1:
             print("Dark")
             delegate.window?.overrideUserInterfaceStyle = .dark
+            userDefaults.set(true, forKey: "darkMode")
         default:
-            break
+            checkDarkMode()
         }
-        
+        checkDarkMode()
     }
     
     
@@ -144,4 +145,16 @@ class ProfileViewController: UIViewController {
         
     }
 
+    func checkDarkMode() {
+        // add this code along with window code above to home view (initial view will set all views to dark/light)
+        let userDefaults = UserDefaults.standard
+        if userDefaults.bool(forKey: "darkMode") == true {
+            overrideUserInterfaceStyle = .dark
+            darkmodeSegControl.selectedSegmentIndex = 1
+        } else {
+            overrideUserInterfaceStyle = .light
+            darkmodeSegControl.selectedSegmentIndex = 0
+        }
+    }
+    
 }

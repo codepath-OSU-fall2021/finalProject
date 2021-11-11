@@ -178,7 +178,9 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // keep text box white with black text in dark mode
         numberOfSharesInput.backgroundColor = .white
+        numberOfSharesInput.textColor = .black
         self.numberOfSharesInput.delegate = self
         
         self.symbolLabel.text = self.symbol

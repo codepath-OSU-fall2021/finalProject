@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        // Check dark mode setting and set all views
+        checkDarkMode()
         // Dark mode makes the text fields black
         self.overrideUserInterfaceStyle = .light
         
@@ -75,5 +77,16 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func checkDarkMode() {
+        // add this code along with window code above to home view (initial view will set all views to dark/light)
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let delegate = windowScene.delegate as? SceneDelegate else { return }
+        let userDefaults = UserDefaults.standard
+        if userDefaults.bool(forKey: "darkMode") == true {
+            delegate.window?.overrideUserInterfaceStyle = .dark
+        } else {
+            delegate.window?.overrideUserInterfaceStyle = .light
+        }
+    }
 
 }

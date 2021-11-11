@@ -33,6 +33,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         
         // Do any additional setup after loading the view.
         searchBarField.backgroundColor = .white
+        searchBarField.textColor = .black
         searchTableView.delegate = self
         searchBarField.delegate = self
         searchTableView.dataSource = self

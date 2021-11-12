@@ -98,7 +98,8 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
                 self.numberOfShares = quantityHeld
                 self.showErrorText("You own \(quantityHeld) shares of \(symbol). Only \(quantityHeld) shares sold.")
             }
-            ownedStock?["quantityHeld"] = self.quantityHeld - self.numberOfShares
+            self.ownedStock?["quantityHeld"] = self.quantityHeld - self.numberOfShares
+            self.ownedStock?["amountSold"] = self.ownedStock?["amountSold"] as! Int + self.numberOfShares
             ownedStock?.saveInBackground { (success, error) in
                 if (success) {
                     let totalPrice = Float(self.numberOfShares) * self.sharePrice
@@ -111,6 +112,7 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
                             self.refreshBalance()
                             self.queryOwnedStocks()
                             self.numberOfSharesOwnedValue.text = "\(self.quantityHeld)"
+                            self.clearTextField()
                         } else {
                             print(error?.localizedDescription ?? "Unknown Error")
                         }
@@ -123,6 +125,7 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    // APR: Need to add funtionality to prevent buys when price per stock = $0
     // Buy functionality:
     func onBuyConfirm(_ sender: Any) {
         let totalPrice = Float(numberOfShares) * sharePrice
@@ -190,21 +193,19 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    // Updates text boxes based on buy/sell segment control
-    // Hides error message between screens
-    // Clears text box between screens [Keep or remove?]
+    // Updates/clears various fields based on segment control
     @IBAction func tradeActionContol(_ sender: Any) {
         if tradeState == .buy {
             totalPriceLabel.text = "Total purchase price:"
             numberOfSharesLabel.text = "# of shares to buy:"
             hideErrorText()
-            numberOfSharesInput.text = "0"
+            clearTextField()
             confirmButton.setTitle("Confirm Buy", for: .normal)
         } else {
             totalPriceLabel.text = "Total sale price:"
             numberOfSharesLabel.text = "# of shares to sell:"
             hideErrorText()
-            numberOfSharesInput.text = "0"
+            clearTextField()
             confirmButton.setTitle("Confirm Sell", for: .normal)
         }
     }
@@ -232,7 +233,10 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
         balanceLabel.text = "Balance: \(formattedBalance)"
     }
     
-        
+    // Empties text Field
+    func clearTextField() {
+        numberOfSharesInput.text = "0"
+    }
 
     
     // ???

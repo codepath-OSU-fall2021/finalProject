@@ -403,7 +403,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <action selector="onShareQuantityChange:" destination="GEJ-I5-bmS" eventType="editingDidEnd" id="MGp-F7-2d8"/>
+                                    <action selector="onShareQuantityChange:" destination="GEJ-I5-bmS" eventType="editingChanged" id="Xro-Bz-Ghb"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price per share: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ytf-fh-7ms">
@@ -442,16 +442,25 @@
                                     <action selector="onConfirm:" destination="GEJ-I5-bmS" eventType="touchUpInside" id="IkO-TH-AqG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umu-Gk-CBg">
+                                <rect key="frame" x="8" y="426.5" width="398" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9VH-4S-nKu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="umu-Gk-CBg" firstAttribute="top" secondItem="19E-IZ-IUO" secondAttribute="bottom" constant="8" id="9C7-Hj-23w"/>
                             <constraint firstItem="19E-IZ-IUO" firstAttribute="top" secondItem="xix-6c-RV5" secondAttribute="bottom" constant="20" id="BYf-iu-e7N"/>
                             <constraint firstItem="DFS-fS-Er6" firstAttribute="leading" secondItem="9VH-4S-nKu" secondAttribute="leading" constant="40" id="ExG-jy-3dS"/>
                             <constraint firstItem="4c2-q2-kq0" firstAttribute="top" secondItem="9VH-4S-nKu" secondAttribute="top" constant="20" id="IFy-Tv-1jA"/>
                             <constraint firstItem="9VH-4S-nKu" firstAttribute="trailing" secondItem="62m-Vp-XUn" secondAttribute="trailing" constant="40" id="MJj-X8-2di"/>
                             <constraint firstItem="DFS-fS-Er6" firstAttribute="top" secondItem="ytL-Bl-zjN" secondAttribute="bottom" constant="20" id="Vf7-8L-bVF"/>
                             <constraint firstItem="Ytf-fh-7ms" firstAttribute="top" secondItem="DFS-fS-Er6" secondAttribute="bottom" constant="40" id="Wek-Np-qpG"/>
+                            <constraint firstItem="9VH-4S-nKu" firstAttribute="trailing" secondItem="umu-Gk-CBg" secondAttribute="trailing" constant="8" id="YUh-nv-rR6"/>
+                            <constraint firstItem="umu-Gk-CBg" firstAttribute="leading" secondItem="9VH-4S-nKu" secondAttribute="leading" constant="8" id="aOo-gq-bW6"/>
                             <constraint firstItem="ytL-Bl-zjN" firstAttribute="top" secondItem="62m-Vp-XUn" secondAttribute="bottom" constant="20" id="bUg-K4-Biv"/>
                             <constraint firstItem="xix-6c-RV5" firstAttribute="top" secondItem="Ytf-fh-7ms" secondAttribute="bottom" constant="20" id="cPI-MT-aeT"/>
                             <constraint firstItem="19E-IZ-IUO" firstAttribute="leading" secondItem="9VH-4S-nKu" secondAttribute="leading" constant="40" id="f4o-MN-pdI"/>
@@ -470,10 +479,12 @@
                     <connections>
                         <outlet property="balanceLabel" destination="4c2-q2-kq0" id="cmP-cE-QM0"/>
                         <outlet property="confirmButton" destination="19E-IZ-IUO" id="Aac-h8-09i"/>
+                        <outlet property="errorLabel" destination="umu-Gk-CBg" id="1dY-eZ-IDf"/>
                         <outlet property="numberOfSharesInput" destination="GFD-gg-GoU" id="oze-fQ-rHC"/>
                         <outlet property="shareDisplayLabel" destination="Ytf-fh-7ms" id="Pkt-EP-tYw"/>
                         <outlet property="symbolLabel" destination="ytL-Bl-zjN" id="iAY-ey-sR1"/>
                         <outlet property="totalPriceLabel" destination="xix-6c-RV5" id="3zQ-Qv-Jbg"/>
+                        <outlet property="tradeSegmentControl" destination="62m-Vp-XUn" id="cS5-9Z-onr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U4J-na-d0Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -642,6 +653,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -25,19 +25,100 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    enum TradeState {
+        case buy
+        case sell
+    }
+    
     var numberOfShares: Int = 0
     var sharePrice: Float = 0
     var symbol: String = "MSFT"
     var user: PFObject? = nil
-
+    
+    var tradeState: TradeState {
+        if tradeSegmentControl.selectedSegmentIndex == 0 {
+            return TradeState.buy
+        } else {
+            return TradeState.sell
+        }
+    }
+    
+    
+    
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var numberOfSharesInput: UITextField!
     @IBOutlet weak var shareDisplayLabel: UILabel!
     @IBOutlet weak var confirmButton: UIButton!
     @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var symbolLabel: UILabel!
+    @IBOutlet weak var tradeSegmentControl: UISegmentedControl!
+    @IBOutlet weak var errorLabel: UILabel!
+    
     
     @IBAction func onConfirm(_ sender: Any) {
+        if tradeState == .buy {
+            self.onBuyConfirm(sender)
+        } else {
+            self.onSellConfirm(sender)
+        }
+    }
+    
+    func onSellConfirm(_ sender: Any) {
+        hideErrorText()
+        let query = PFQuery(className: "Stock")
+        query.whereKey("user", equalTo: user)
+        query.whereKey("symbol", equalTo: symbol)
+        query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+            if let error = error {
+                // Log details of the failure
+                print(error.localizedDescription)
+            } else if let objects = objects {
+                // The find succeeded.
+                print("Successfully retrieved \(objects.count) stocks.")
+                // Do something with the found objects
+                if objects.count == 0 {
+                    self.showErrorText("You do not own this stock")
+                    print("Error: Use does not own any stocks of this symbol")
+                } else if objects.count == 1 {
+                    let stockToSell = objects[0]
+                    if let quantityHeld = stockToSell["quantityHeld"] as? Int {
+                        if self.numberOfShares > quantityHeld {
+                            self.numberOfShares = quantityHeld
+                        }
+                    } else {
+                        print("Error")
+                    }
+                    stockToSell["quantityHeld"] = stockToSell["quantityHeld"] as! Int - self.numberOfShares
+                    // stockToSell["amountSpent"] = stockToUpdate["amountSpent"] as! Float + roundedPrice
+                    stockToSell.saveInBackground { (success, error) in
+                        if (success) {
+                            let totalPrice = Float(self.numberOfShares) * self.sharePrice
+                            let roundedPrice = round(totalPrice * 100) / 100.0
+                            let startBalance = self.user!["balance"] as! Float
+                            self.user!["balance"] = startBalance + roundedPrice
+                            self.user?.saveInBackground { (sucess, error) in
+                                if (success) {
+                                    print("User saved")
+                                    self.refreshBalance()
+                                } else {
+                                    print(error?.localizedDescription)
+                                }
+                            }
+                        } else {
+                            print(error?.localizedDescription)
+                        }
+                    }
+                } else {
+                    print("Some error, user has two or more stocks of the same symbol")
+                }
+            }
+        }
+    }
+        
+
+    
+    
+    func onBuyConfirm(_ sender: Any) {
         let totalPrice = Float(numberOfShares) * sharePrice
         let roundedPrice = round(totalPrice * 100) / 100.0
         let query = PFQuery(className: "Stock")
@@ -100,6 +181,18 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
+    
+    func showErrorText(_ errorText: String) {
+        self.errorLabel.isHidden = false
+        self.errorLabel.text = errorText
+    }
+    
+    func hideErrorText() {
+        self.errorLabel.isHidden = true
+        self.errorLabel.text = ""
+    }
+    
     
     func refreshBalance() {
         if self.user == nil {
@@ -184,6 +277,8 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
         self.numberOfSharesInput.delegate = self
         
         self.symbolLabel.text = self.symbol
+        
+        self.errorLabel.isHidden = true
 
         let user = PFUser.current()
         

@@ -24,6 +24,11 @@ class LoginViewController: UIViewController {
         // Dark mode makes the text fields black
         self.overrideUserInterfaceStyle = .light
         
+        // https://kaushalelsewhere.medium.com/how-to-dismiss-keyboard-in-a-view-controller-of-ios-3b1bfe973ad1
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        
+        view.addGestureRecognizer(tap)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,6 +57,7 @@ class LoginViewController: UIViewController {
         
         
     }
+    
     
     
     @IBAction func onSignUp(_ sender: Any) {

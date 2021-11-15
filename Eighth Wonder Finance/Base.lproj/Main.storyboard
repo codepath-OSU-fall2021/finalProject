@@ -136,18 +136,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="118"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stock Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBM-PX-f9f">
-                                                    <rect key="frame" x="126" y="11" width="250" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stock Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBM-PX-f9f">
+                                                    <rect key="frame" x="126" y="11" width="250" height="20.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="250" id="d8R-Kz-l2f"/>
-                                                        <constraint firstAttribute="height" constant="20" id="enI-gS-hep"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current price: $14.32" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="daW-lp-mAa">
-                                                    <rect key="frame" x="126" y="39" width="250" height="20"/>
+                                                    <rect key="frame" x="126" y="39.5" width="250" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="IvQ-d6-TGT"/>
                                                         <constraint firstAttribute="width" constant="250" id="uHt-5H-v8M"/>
@@ -164,7 +163,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.32%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9N-yd-etL">
-                                                    <rect key="frame" x="126" y="67" width="250" height="20"/>
+                                                    <rect key="frame" x="126" y="67.5" width="250" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="ZVa-ry-JPP"/>
                                                         <constraint firstAttribute="width" constant="250" id="bCU-7m-5zi"/>
@@ -234,21 +233,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zc-u8-no2">
-                                <rect key="frame" x="125" y="108" width="164" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Company Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zc-u8-no2">
+                                <rect key="frame" x="10" y="108" width="394" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StockChart" translatesAutoresizingMaskIntoConstraints="NO" id="0t6-6F-26z">
-                                <rect key="frame" x="127" y="155" width="160" height="160"/>
+                                <rect key="frame" x="127" y="154.5" width="160" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="7xj-KE-Eu6"/>
                                     <constraint firstAttribute="width" constant="160" id="mVh-A5-E4Q"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Website Link" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="htj-DA-nt8">
-                                <rect key="frame" x="20" y="335" width="374" height="30"/>
+                                <rect key="frame" x="20" y="334.5" width="374" height="30"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" link="YES"/>
@@ -262,7 +261,7 @@
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QER-Q6-bhe">
-                                <rect key="frame" x="20" y="385" width="374" height="387"/>
+                                <rect key="frame" x="20" y="384.5" width="374" height="387.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -288,6 +287,7 @@
                             <constraint firstItem="aB5-yd-Nt6" firstAttribute="trailing" secondItem="QER-Q6-bhe" secondAttribute="trailing" constant="20" id="4eC-Kp-BvI"/>
                             <constraint firstItem="R3x-Xd-JvQ" firstAttribute="leading" secondItem="aB5-yd-Nt6" secondAttribute="leading" constant="40" id="5Vy-Pf-m7t"/>
                             <constraint firstItem="htj-DA-nt8" firstAttribute="leading" secondItem="aB5-yd-Nt6" secondAttribute="leading" constant="20" id="5jh-E0-dIn"/>
+                            <constraint firstItem="aB5-yd-Nt6" firstAttribute="trailing" secondItem="1zc-u8-no2" secondAttribute="trailing" constant="10" id="5rY-KS-ktI"/>
                             <constraint firstItem="1zc-u8-no2" firstAttribute="top" secondItem="aB5-yd-Nt6" secondAttribute="top" constant="20" id="9Yl-6i-wbc"/>
                             <constraint firstItem="R3x-Xd-JvQ" firstAttribute="bottom" secondItem="aB5-yd-Nt6" secondAttribute="bottom" id="9js-KG-8dx"/>
                             <constraint firstItem="htj-DA-nt8" firstAttribute="top" secondItem="0t6-6F-26z" secondAttribute="bottom" constant="20" id="CuP-kv-1Cc"/>
@@ -299,6 +299,7 @@
                             <constraint firstItem="QER-Q6-bhe" firstAttribute="leading" secondItem="aB5-yd-Nt6" secondAttribute="leading" constant="20" id="QNE-03-iBG"/>
                             <constraint firstItem="1zc-u8-no2" firstAttribute="centerX" secondItem="kLQ-2c-1A7" secondAttribute="centerX" id="S4N-cK-5ww"/>
                             <constraint firstItem="R3x-Xd-JvQ" firstAttribute="top" secondItem="QER-Q6-bhe" secondAttribute="bottom" constant="10" id="SVn-Jr-ilO"/>
+                            <constraint firstItem="1zc-u8-no2" firstAttribute="leading" secondItem="aB5-yd-Nt6" secondAttribute="leading" constant="10" id="mgS-QY-rVz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2hd-gv-bXF"/>

@@ -39,6 +39,15 @@ class ResearchDetailViewController: UIViewController {
     @IBOutlet weak var companyDescriptionView: UITextView!
     
     
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "researchToBuySegue" {
+            let destination = segue.destination as! TradeViewViewController
+            destination.symbol = companySymbol
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

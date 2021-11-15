@@ -271,7 +271,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R3x-Xd-JvQ">
                                 <rect key="frame" x="40" y="782" width="334" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Buy">
+                                <buttonConfiguration key="configuration" style="plain" title="Trade">
                                     <backgroundConfiguration key="background">
                                         <color key="strokeColor" name="AccentColor"/>
                                     </backgroundConfiguration>

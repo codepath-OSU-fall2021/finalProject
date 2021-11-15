@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -124,8 +125,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="t7O-uz-yYv">
-                                <rect key="frame" x="0.0" y="-39" width="414" height="813"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="t7O-uz-yYv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="777"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResearchStockCell" rowHeight="118" id="mbd-a5-fjg" customClass="ResearchStockCell" customModule="Eighth_Wonder_Finance" customModuleProvider="target">
@@ -195,6 +196,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycH-xz-nh5">
+                                <rect key="frame" x="170" y="782" width="74" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Gainers"/>
+                                <connections>
+                                    <action selector="onSelectStockListButton:" destination="HVl-XQ-d3l" eventType="touchUpInside" id="sgb-6N-G8k"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fAJ-0P-vbx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -202,11 +211,14 @@
                             <constraint firstItem="t7O-uz-yYv" firstAttribute="top" secondItem="FVy-bA-Khg" secondAttribute="top" id="IZD-k3-duO"/>
                             <constraint firstItem="t7O-uz-yYv" firstAttribute="trailing" secondItem="fAJ-0P-vbx" secondAttribute="trailing" id="KUF-MY-qDO"/>
                             <constraint firstItem="t7O-uz-yYv" firstAttribute="leading" secondItem="fAJ-0P-vbx" secondAttribute="leading" id="Ob5-hh-i6v"/>
-                            <constraint firstItem="t7O-uz-yYv" firstAttribute="bottom" secondItem="fAJ-0P-vbx" secondAttribute="bottom" id="s4v-b0-Rpj"/>
+                            <constraint firstItem="ycH-xz-nh5" firstAttribute="bottom" secondItem="fAJ-0P-vbx" secondAttribute="bottom" id="a4n-VR-QW0"/>
+                            <constraint firstItem="ycH-xz-nh5" firstAttribute="centerX" secondItem="FVy-bA-Khg" secondAttribute="centerX" id="ekE-NI-v3b"/>
+                            <constraint firstItem="ycH-xz-nh5" firstAttribute="top" secondItem="t7O-uz-yYv" secondAttribute="bottom" constant="5" id="har-Se-B1M"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rAw-Dp-3yA"/>
                     <connections>
+                        <outlet property="stockListButton" destination="ycH-xz-nh5" id="URp-WS-kv8"/>
                         <outlet property="tableView" destination="t7O-uz-yYv" id="lrR-w4-8i7"/>
                     </connections>
                 </viewController>

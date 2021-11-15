@@ -33,6 +33,61 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
+    var stockResearchType = "gainers"
+    
+    @IBAction func onSelectStockListButton(_ sender: Any) {
+        let ac = UIAlertController(title: "Stock List", message: "select stocks to research", preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Gainers", style: .default, handler: { (_) in
+            if self.stockResearchType == "gainers" {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.stockListButton.setTitle("Gainers", for: .normal)
+                self.stockResearchType = "gainers"
+                self.getStockInfo(successCallback: self.handleStockInfo)
+            }
+        }))
+        ac.addAction(UIAlertAction(title: "Losers", style: .default, handler: { (_) in
+            if self.stockResearchType == "losers" {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.stockListButton.setTitle("Losers", for: .normal)
+                self.stockResearchType = "losers"
+                self.getStockInfo(successCallback: self.handleStockInfo)
+            }
+        }))
+        ac.addAction(UIAlertAction(title: "Most Active", style: .default, handler: { (_) in
+            if self.stockResearchType == "mostactive" {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.stockListButton.setTitle("Most Active", for: .normal)
+                self.stockResearchType = "mostactive"
+                self.getStockInfo(successCallback: self.handleStockInfo)
+            }
+        }))
+        ac.addAction(UIAlertAction(title: "IEX Volume", style: .default, handler: { (_) in
+            if self.stockResearchType == "iexvolume" {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.stockListButton.setTitle("IEX Volume", for: .normal)
+                self.stockResearchType = "iexvolume"
+                self.getStockInfo(successCallback: self.handleStockInfo)
+            }
+        }))
+        ac.addAction(UIAlertAction(title: "IEX Percent", style: .default, handler: { (_) in
+            if self.stockResearchType == "iexpercent" {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.stockListButton.setTitle("IEX Percent", for: .normal)
+                self.stockResearchType = "iexpercent"
+                self.getStockInfo(successCallback: self.handleStockInfo)
+            }
+        }))
+        ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { (_) in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        present(ac, animated: true)
+    }
+    @IBOutlet weak var stockListButton: UIButton!
     var stocks: [StockInfo] = []
     var logos: [String:Logo] = [:]
     
@@ -119,7 +174,7 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
     
     func getStockInfo(successCallback: @escaping ([StockInfo]) -> ()) {
         // https://learnappmaking.com/urlsession-swift-networking-how-to/
-        let url = URL(string: "https://cloud.iexapis.com/stable/stock/market/list/gainers?token=pk_246252e7872a41e4bb86d8c546d5e510")!
+        let url = URL(string: "https://cloud.iexapis.com/stable/stock/market/list/\(stockResearchType)?token=pk_246252e7872a41e4bb86d8c546d5e510")!
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         
         let task = session.dataTask(with: url) { data, response, error in

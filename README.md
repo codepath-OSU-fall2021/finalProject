@@ -28,7 +28,7 @@ An application where users can simulate trading stocks with a starting balance o
 * [x] User can see current price of stocks as well as a logo of the company
 * [x] User can research stock information by ticker symbol
 * [x] User can purchase shares of stock using a hypothetical balance of cash
-* [ ] User can sell shares of stock using a hypothetical balance of cash
+* [x] User can sell shares of stock, and balance will reflect realized gains and losses.
 * [x] User can view the current balance of their portfolio
 
 

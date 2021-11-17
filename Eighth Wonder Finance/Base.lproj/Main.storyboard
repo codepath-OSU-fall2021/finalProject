@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -603,6 +602,7 @@
                     <navigationItem key="navigationItem" id="Qi4-2o-1fR"/>
                     <connections>
                         <outlet property="searchBarField" destination="OqS-NR-lNx" id="jd6-Zu-3UK"/>
+                        <outlet property="searchBarLabel" destination="1ZM-I2-Q7Y" id="Bsd-59-yXV"/>
                         <outlet property="searchTableView" destination="gY2-dD-yqv" id="mWl-Pe-X8O"/>
                     </connections>
                 </viewController>

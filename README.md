@@ -49,11 +49,15 @@ An application where users can simulate trading stocks with a starting balance o
   * [ ] User can click on a stock with a segue to the trade page to sell
   * [ ] User can see the profit and loss of the shares they own
 * Research Screen
-   * [x] User can research stock information by ticker symbol
+   * [x] User can research stock information by ticker symbol or company name
    * [x] User can click a stock to get more information
-   * [ ] User can click on a buy button with segue to trade page
+   * [x] User can click on the Trade button to segue to trade page
 * Trade Screen
    * [x] User can see current price of stocks as well as a logo of the company
+   * [x] User can select a company to view more information as well as purchase shares
+* Explore Screen
+   * [x] User can explore a list of companies
+   * [x] User can toggle different metrics such as biggest daily gainers or losers, and see stocks for that metric  
    * [x] User can select a company to view more information as well as purchase shares
 * User Profile/Settings Screen
    * [x] User can reset the game
@@ -66,16 +70,16 @@ An application where users can simulate trading stocks with a starting balance o
 
 * [ ] Home tab
 * [x] Research tab
-* [ ] Trade tab
+* [x] Explore tab
 * [x] Profile/Settings tab
 
 **Flow Navigation** (Screen to Screen)
 
 * [x] Login -> Main screen
-* [ ] Stock Information - > Stock information and and Purchase button
-* [x] Research page -> User can buy shares of a stock
 * [ ] Home page -> User can sell shares of a stock they own
-* [x] Settings - > Log-out
+* [x] Research page -> User can search for and segue to the Trade view to buy or sell shares of a stock
+* [x] Explore page - > User can view stock information and segue to the Trade view
+* [x] Settings - > User can log-out, toggle dark mode, or reset the game
 
 Optional:
 * [x] Forced Log-in -> Account creation if no login is available

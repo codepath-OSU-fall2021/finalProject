@@ -14,6 +14,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     @IBOutlet var searchBarField: UITextField!
     @IBOutlet weak var searchTableView: UITableView!
+    @IBOutlet weak var searchBarLabel: UILabel!
     
     var symbols:[String] = Array()
     var originalSymbols:[String] = Array()
@@ -37,6 +38,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         searchTableView.delegate = self
         searchBarField.delegate = self
         searchTableView.dataSource = self
+        searchBarLabel.text = "Search for Company:"
+        searchTableView.isHidden = true
         searchBarField.addTarget(self, action: #selector(searchRecords(_ :)), for: .editingChanged)
         
     }
@@ -49,6 +52,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @objc func searchRecords(_ textField: UITextField) {
         self.symbols.removeAll()
         if textField.text?.count != 0 {
+            searchBarLabel.text = "Select From Below:"
+            searchTableView.isHidden = false
             for symbol in originalSymbols {
                 if let symbolToSearch = textField.text {
                     let range = symbol.uppercased().range(of: symbolToSearch, options: .caseInsensitive, range: nil, locale: nil)
@@ -58,6 +63,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
         } else {
+            searchBarLabel.text = "Search for Company:"
+            searchTableView.isHidden = true
             for symbol in originalSymbols {
                 symbols.append(symbol)
             }

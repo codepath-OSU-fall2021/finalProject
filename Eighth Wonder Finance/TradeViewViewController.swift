@@ -200,13 +200,15 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
             numberOfSharesLabel.text = "# of shares to buy:"
             hideErrorText()
             clearTextField()
-            confirmButton.setTitle("Confirm Buy", for: .normal)
+            confirmButton.titleLabel?.text  = "Confirm Buy"
+            confirmButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         } else {
             totalPriceLabel.text = "Total sale price:"
             numberOfSharesLabel.text = "# of shares to sell:"
             hideErrorText()
             clearTextField()
-            confirmButton.setTitle("Confirm Sell", for: .normal)
+            confirmButton.titleLabel?.text  = "Confirm Sell"
+            confirmButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         }
     }
     

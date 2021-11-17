@@ -24,6 +24,8 @@ class ProfileViewController: UIViewController {
         usernameLabel.text = PFUser.current()?.username
         // Do any additional setup after loading the view.
         
+        self.title = "Settings"
+        
         let user = PFUser.current()
         if user != nil {
             do {

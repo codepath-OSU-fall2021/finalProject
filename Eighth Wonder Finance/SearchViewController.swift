@@ -39,6 +39,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         searchTableView.dataSource = self
         searchBarField.addTarget(self, action: #selector(searchRecords(_ :)), for: .editingChanged)
         
+        self.title = "Search"
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

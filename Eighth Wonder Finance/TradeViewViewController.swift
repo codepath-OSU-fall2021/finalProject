@@ -365,7 +365,11 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
         self.symbolLabel.text = self.symbol
         
         self.errorLabel.isHidden = true
-        
+    }
+    
+    
+    // We need to update the balance every time the view appears
+    override func viewDidAppear(_ animated: Bool) {
         let user = PFUser.current()
         
         if user != nil {
@@ -382,9 +386,7 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
         
         refreshBalance()
         queryOwnedStocks()
-        
     }
-    
 
     
     /*

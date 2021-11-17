@@ -84,10 +84,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let tradeViewController = self.storyboard?.instantiateViewController(withIdentifier: "TradeView") as! TradeViewViewController
+        let researchDetailViewController = self.storyboard?.instantiateViewController(withIdentifier: "ResearchDetailView") as! ResearchDetailViewController
         let userSearchResult = symbols[indexPath.row]
-        tradeViewController.symbol = searchData[userSearchResult] as! String
-        self.navigationController?.pushViewController(tradeViewController, animated: true)
+        researchDetailViewController.companySymbol = searchData[userSearchResult] as! String
+        self.navigationController?.pushViewController(researchDetailViewController, animated: true)
     }
     
     /*

@@ -223,12 +223,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="trs-9r-KXu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-430.43478260869568" y="1759.8214285714284"/>
+            <point key="canvasLocation" x="258" y="1760"/>
         </scene>
         <!--Research Detail View Controller-->
         <scene sceneID="Hqa-fi-bjm">
             <objects>
-                <viewController id="d1K-nY-SI4" customClass="ResearchDetailViewController" customModule="Eighth_Wonder_Finance" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResearchDetailView" id="d1K-nY-SI4" customClass="ResearchDetailViewController" customModule="Eighth_Wonder_Finance" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kLQ-2c-1A7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -608,7 +608,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsb-gz-aXF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257.97101449275362" y="1759.8214285714284"/>
+            <point key="canvasLocation" x="-430" y="1760"/>
         </scene>
         <!--Home-->
         <scene sceneID="uKt-f2-OaP">
@@ -647,11 +647,11 @@
             </objects>
             <point key="canvasLocation" x="-1143" y="1760"/>
         </scene>
-        <!--Trade-->
+        <!--Explore-->
         <scene sceneID="g1t-j7-WH8">
             <objects>
                 <navigationController storyboardIdentifier="TradeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="TfR-gw-HLb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Trade" image="chart.xyaxis.line" catalog="system" id="tZq-EQ-L5A"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="chart.bar.doc.horizontal" catalog="system" id="tZq-EQ-L5A"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0bW-Ja-boE">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -659,7 +659,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="0LA-Qy-G89" kind="relationship" relationship="rootViewController" id="fvM-Ab-yQf"/>
+                        <segue destination="HVl-XQ-d3l" kind="relationship" relationship="rootViewController" id="Pg6-HR-Ymn"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIs-JM-Mo3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -678,7 +678,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="HVl-XQ-d3l" kind="relationship" relationship="rootViewController" id="2PI-Rb-qec"/>
+                        <segue destination="0LA-Qy-G89" kind="relationship" relationship="rootViewController" id="EVl-G8-ClI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Kl-aY-rkK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -707,7 +707,7 @@
     </scenes>
     <resources>
         <image name="StockChart" width="85" height="87"/>
-        <image name="chart.xyaxis.line" catalog="system" width="128" height="101"/>
+        <image name="chart.bar.doc.horizontal" catalog="system" width="115" height="128"/>
         <image name="digitalicon" width="130" height="129"/>
         <image name="growth" width="320" height="213"/>
         <image name="house" catalog="system" width="128" height="106"/>

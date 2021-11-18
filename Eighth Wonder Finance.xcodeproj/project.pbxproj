@@ -655,6 +655,7 @@
 				DEVELOPMENT_TEAM = B4QRR42TWK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Eighth Wonder Finance/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Eighth Wonder";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -684,6 +685,7 @@
 				DEVELOPMENT_TEAM = B4QRR42TWK;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Eighth Wonder Finance/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Eighth Wonder";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

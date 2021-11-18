@@ -87,7 +87,9 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
         }))
         present(ac, animated: true)
     }
+    
     @IBOutlet weak var stockListButton: UIButton!
+    
     var stocks: [StockInfo] = []
     var logos: [String:Logo] = [:]
     
@@ -214,9 +216,9 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         getStockInfo(successCallback: handleStockInfo)
+        self.title = "Explore"
     }
     
-
     /*
     // MARK: - Navigation
 

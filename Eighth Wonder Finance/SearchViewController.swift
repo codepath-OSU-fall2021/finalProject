@@ -42,6 +42,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         searchTableView.isHidden = true
         searchBarField.addTarget(self, action: #selector(searchRecords(_ :)), for: .editingChanged)
         
+        self.title = "Search"
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -15,6 +15,8 @@ class ResearchStockCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        stockLogo.layer.masksToBounds = true
+        stockLogo.layer.cornerRadius = stockLogo.frame.size.width / 2
         // Initialization code
     }
     
@@ -24,5 +26,4 @@ class ResearchStockCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

@@ -654,6 +654,7 @@
                     <navigationItem key="navigationItem" id="Qi4-2o-1fR"/>
                     <connections>
                         <outlet property="searchBarField" destination="OqS-NR-lNx" id="jd6-Zu-3UK"/>
+                        <outlet property="searchBarLabel" destination="1ZM-I2-Q7Y" id="Bsd-59-yXV"/>
                         <outlet property="searchTableView" destination="gY2-dD-yqv" id="mWl-Pe-X8O"/>
                     </connections>
                 </viewController>

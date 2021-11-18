@@ -15,28 +15,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eighth Wonder Finance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edY-Yg-mJG">
-                                <rect key="frame" x="23" y="391" width="368" height="40"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="33"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="WhiteLogo" translatesAutoresizingMaskIntoConstraints="NO" id="QDu-0b-YZ2">
-                                <rect key="frame" x="119.5" y="144" width="175" height="147"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ColorLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Rxm-cC-ke7">
+                                <rect key="frame" x="119.5" y="374.5" width="175" height="147"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="QDu-0b-YZ2" secondAttribute="height" multiplier="25:21" id="pMX-QO-9Ff"/>
-                                    <constraint firstAttribute="width" constant="175" id="qOd-lW-9UH"/>
+                                    <constraint firstAttribute="width" constant="175" id="9qP-5y-qg6"/>
+                                    <constraint firstAttribute="height" constant="147" id="ON9-SH-HfH"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.0010295168029999999" green="0.7308628559" blue="0.42086243629999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="edY-Yg-mJG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0YC-mc-ODe"/>
-                            <constraint firstItem="edY-Yg-mJG" firstAttribute="top" secondItem="QDu-0b-YZ2" secondAttribute="bottom" constant="100" id="6IU-zl-Xeo"/>
-                            <constraint firstItem="QDu-0b-YZ2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="6SK-2A-y0b"/>
-                            <constraint firstItem="QDu-0b-YZ2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Smk-ET-zaw"/>
+                            <constraint firstItem="Rxm-cC-ke7" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Cmp-tl-hNA"/>
+                            <constraint firstItem="Rxm-cC-ke7" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="YtT-xx-fR7"/>
+                            <constraint firstItem="Rxm-cC-ke7" firstAttribute="width" secondItem="Rxm-cC-ke7" secondAttribute="height" multiplier="25:21" id="n9s-hz-INv"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -46,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="WhiteLogo" width="2366" height="1990"/>
+        <image name="ColorLogo" width="2366" height="1990"/>
     </resources>
 </document>

@@ -82,6 +82,15 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
                 self.getStockInfo(successCallback: self.handleStockInfo)
             }
         }))
+        ac.addAction(UIAlertAction(title: "Watch List", style: .default, handler: { (_) in
+            if self.stockResearchType == "watchlist" {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                self.stockListButton.setTitle("Watch List", for: .normal)
+                self.stockResearchType = "watchlist"
+                self.getStockInfo(successCallback: self.handleStockInfo)
+            }
+        }))
         ac.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { (_) in
             self.dismiss(animated: true, completion: nil)
         }))

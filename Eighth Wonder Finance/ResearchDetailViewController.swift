@@ -37,7 +37,7 @@ class ResearchDetailViewController: UIViewController {
     @IBOutlet weak var companyNameLabel: UILabel!
     @IBOutlet weak var companyLogoImage: UIImageView!
     @IBOutlet weak var companyDescriptionView: UITextView!
-    
+    @IBOutlet weak var watchlistButtonOutlet: UIButton!
     
 
     
@@ -51,6 +51,7 @@ class ResearchDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +62,13 @@ class ResearchDetailViewController: UIViewController {
         companyNameLabel.text = companyNameToDisplay
         getLogoUrl(symbol: companySymbol)
         getCompanyInfo(symbol: companySymbol)
+        if checkWatchList() {
+            watchlistButtonOutlet.setTitle("Remove from Watchlist", for: .normal)
+        } else {
+            watchlistButtonOutlet.setTitle("Add to Watchlist", for: .normal)
+        }
+            
+        
     }
     
     func getCompanyInfo(symbol: String) {
@@ -133,7 +141,57 @@ class ResearchDetailViewController: UIViewController {
         task.resume()
     }
     
-
+    
+    @IBAction func watchlistButton(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        var watchList = [String]()
+        watchList = defaults.array(forKey: "defaultWatchList") as! [String]
+        
+        if checkWatchList() {
+            // Remove stock from watch list and update user defaults
+            let modifiedWatchList = watchList.filter{$0 != companySymbol}
+            print("new list")
+            print(modifiedWatchList)
+            defaults.set(modifiedWatchList, forKey: "defaultWatchList")
+            
+            // Set button text to Add
+            watchlistButtonOutlet.setTitle("Add to Watchlist", for: .normal)
+        } else {
+            // Add stock to watch list and update user defaults
+            var modifiedWatchList = watchList
+            modifiedWatchList.append(companySymbol)
+            print("new list")
+            print(modifiedWatchList)
+            defaults.set(modifiedWatchList, forKey: "defaultWatchList")
+            
+            // Set button test to remove
+            watchlistButtonOutlet.setTitle("Remove from Watchlist", for: .normal)
+            
+        }
+    }
+    
+    func checkWatchList() -> Bool {
+        let defaults = UserDefaults.standard
+        var watchList = [String]()
+        if defaults.array(forKey: "defaultWatchList") as? [String] == nil {
+            WatchList()
+            watchList = defaults.array(forKey: "defaultWatchList") as! [String]
+            print(watchList)
+        } else {
+            watchList = defaults.array(forKey: "defaultWatchList") as! [String]
+            print(watchList)
+        }
+        for symbol in watchList {
+            if companySymbol == symbol {
+                print(symbol)
+                print(companySymbol)
+                
+                return true
+            }
+        }
+        
+        return false
+    }
     /*
     // MARK: - Navigation
 

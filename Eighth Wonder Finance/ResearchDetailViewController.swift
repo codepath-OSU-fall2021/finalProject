@@ -63,9 +63,11 @@ class ResearchDetailViewController: UIViewController {
         getLogoUrl(symbol: companySymbol)
         getCompanyInfo(symbol: companySymbol)
         if checkWatchList() {
-            watchlistButtonOutlet.setTitle("Remove from Watchlist", for: .normal)
+            //watchlistButtonOutlet.setTitle("Remove from Watchlist", for: .normal)
+            formatRemoveWatchlistButton()
         } else {
-            watchlistButtonOutlet.setTitle("Add to Watchlist", for: .normal)
+            //watchlistButtonOutlet.setTitle("Add to Watchlist", for: .normal)
+            formatAddWatchlistButton()
         }
             
         
@@ -155,7 +157,8 @@ class ResearchDetailViewController: UIViewController {
             defaults.set(modifiedWatchList, forKey: "defaultWatchList")
             
             // Set button text to Add
-            watchlistButtonOutlet.setTitle("Add to Watchlist", for: .normal)
+           // watchlistButtonOutlet.setTitle("Add to Watchlist", for: .normal)
+            formatAddWatchlistButton()
         } else {
             // Add stock to watch list and update user defaults
             var modifiedWatchList = watchList
@@ -165,7 +168,8 @@ class ResearchDetailViewController: UIViewController {
             defaults.set(modifiedWatchList, forKey: "defaultWatchList")
             
             // Set button test to remove
-            watchlistButtonOutlet.setTitle("Remove from Watchlist", for: .normal)
+            //watchlistButtonOutlet.setTitle("Remove from Watchlist", for: .normal)
+            formatRemoveWatchlistButton()
             
         }
     }
@@ -192,6 +196,26 @@ class ResearchDetailViewController: UIViewController {
         
         return false
     }
+    
+    func formatAddWatchlistButton() {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 20, weight: .bold)
+        ]
+
+        let addWatchlistAttributedString = NSAttributedString(string: "Add to Watchlist", attributes: attributes)
+       
+        watchlistButtonOutlet.setAttributedTitle(addWatchlistAttributedString, for: .normal)
+    }
+    
+    func formatRemoveWatchlistButton() {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: 20, weight: .bold)
+        ]
+        let removeWatchlistAttributedString = NSAttributedString(string: "Remove from Watchlist", attributes: attributes)
+        watchlistButtonOutlet.setAttributedTitle(removeWatchlistAttributedString, for: .normal)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

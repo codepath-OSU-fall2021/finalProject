@@ -128,9 +128,15 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
     // APR: Need to add funtionality to prevent buys when price per stock = $0
     // Buy functionality:
     func onBuyConfirm(_ sender: Any) {
+        hideErrorText()
         let totalPrice = Float(numberOfShares) * sharePrice
         let roundedPrice = round(totalPrice * 100) / 100.0
         let query = PFQuery(className: "Stock")
+        let startBalance = self.user!["balance"] as! Float
+        if startBalance - roundedPrice < 0 {
+            self.showErrorText("You don't have enough money to buy \(numberOfShares) shares of this stock")
+            return
+        }
         query.whereKey("user", equalTo: user)
         query.whereKey("symbol", equalTo: symbol)
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
@@ -149,7 +155,6 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
                     stock["user"] = self.user
                     stock.saveInBackground { (success, error) in
                         if (success) {
-                            let startBalance = self.user!["balance"] as! Float
                             self.user!["balance"] = startBalance - roundedPrice
                             self.user!.add(stock, forKey: "stocks")
                             self.user?.saveInBackground { (sucess, error) in

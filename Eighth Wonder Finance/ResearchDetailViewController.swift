@@ -152,8 +152,6 @@ class ResearchDetailViewController: UIViewController {
         if checkWatchList() {
             // Remove stock from watch list and update user defaults
             let modifiedWatchList = watchList.filter{$0 != companySymbol}
-            print("new list")
-            print(modifiedWatchList)
             defaults.set(modifiedWatchList, forKey: "defaultWatchList")
             
             // Set button text to Add
@@ -163,8 +161,6 @@ class ResearchDetailViewController: UIViewController {
             // Add stock to watch list and update user defaults
             var modifiedWatchList = watchList
             modifiedWatchList.append(companySymbol)
-            print("new list")
-            print(modifiedWatchList)
             defaults.set(modifiedWatchList, forKey: "defaultWatchList")
             
             // Set button test to remove
@@ -180,20 +176,14 @@ class ResearchDetailViewController: UIViewController {
         if defaults.array(forKey: "defaultWatchList") as? [String] == nil {
             WatchList()
             watchList = defaults.array(forKey: "defaultWatchList") as! [String]
-            print(watchList)
         } else {
             watchList = defaults.array(forKey: "defaultWatchList") as! [String]
-            print(watchList)
         }
         for symbol in watchList {
             if companySymbol == symbol {
-                print(symbol)
-                print(companySymbol)
-                
                 return true
             }
         }
-        
         return false
     }
     

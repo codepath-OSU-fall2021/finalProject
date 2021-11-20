@@ -44,6 +44,5 @@ public class WatchList {
         
         let defaults = UserDefaults.standard
         defaults.set(defaultWatchList, forKey: "defaultWatchList")
-        
     }
 }

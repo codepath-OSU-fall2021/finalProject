@@ -33,7 +33,7 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    var stockResearchType = "gainers"
+    var stockResearchType = "watchlist"
     
     @IBAction func onSelectStockListButton(_ sender: Any) {
         let ac = UIAlertController(title: "Stock List", message: "select stocks to research", preferredStyle: .actionSheet)
@@ -185,6 +185,46 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
     
     func getStockInfo(successCallback: @escaping ([StockInfo]) -> ()) {
         // https://learnappmaking.com/urlsession-swift-networking-how-to/
+        if stockResearchType == "watchlist" {
+            let defaults = UserDefaults.standard
+            var watchList = [String]()
+            watchList = defaults.array(forKey: "defaultWatchList") as! [String]
+            
+            var stockResponseArray: [StockInfo] = []
+            
+            for watchStock in watchList {
+                let url = URL(string: "https://cloud.iexapis.com/stable/stock/\(watchStock)/quote?token=pk_246252e7872a41e4bb86d8c546d5e510")!
+                let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+                
+                let task = session.dataTask(with: url) { data, response, error in
+                    if error != nil {
+                        print("Error: \(error)")
+                        return
+                    }
+                    guard let httpResponse = response as? HTTPURLResponse,
+                          (200...299).contains(httpResponse.statusCode) else {
+                        print("Bad http response code")
+                        return
+                    }
+                    guard let mime = response?.mimeType, mime == "application/json" else {
+                        print("Wrong MIME type!")
+                        return
+                    }
+                    do {
+                        let stockResponse = try JSONDecoder().decode(StockInfo.self, from: data!) as StockInfo
+                        stockResponseArray.append(stockResponse)
+                        if watchList.count == stockResponseArray.count {
+                            successCallback(stockResponseArray)
+                        }
+                
+                    } catch {
+                        print("JSON error: \(error.localizedDescription)")
+                    }
+                }
+                task.resume()
+            }
+
+        } else {
         let url = URL(string: "https://cloud.iexapis.com/stable/stock/market/list/\(stockResearchType)?token=pk_246252e7872a41e4bb86d8c546d5e510")!
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         
@@ -208,9 +248,9 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
             } catch {
                 print("JSON error: \(error.localizedDescription)")
             }
-
         }
         task.resume()
+        }
     }
     
     func handleStockInfo(stockArray: [StockInfo]) -> Void {
@@ -222,6 +262,14 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
         super.viewDidLoad()
+        //tableView.delegate = self
+        //tableView.dataSource = self
+        //getStockInfo(successCallback: handleStockInfo)
+        //self.title = "Explore"
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
         getStockInfo(successCallback: handleStockInfo)

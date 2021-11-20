@@ -205,15 +205,13 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
             numberOfSharesLabel.text = "# of shares to buy:"
             hideErrorText()
             clearTextField()
-            confirmButton.titleLabel?.text  = "Confirm Buy"
-            confirmButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+            formatBuyButton()
         } else {
             totalPriceLabel.text = "Total sale price:"
             numberOfSharesLabel.text = "# of shares to sell:"
             hideErrorText()
             clearTextField()
-            confirmButton.titleLabel?.text  = "Confirm Sell"
-            confirmButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+            formatSellButton()
         }
     }
     
@@ -360,6 +358,26 @@ class TradeViewViewController: UIViewController, UITextFieldDelegate {
         return formatedNumber!
     }
     
+    
+    func formatBuyButton() {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white,
+            .font: UIFont.systemFont(ofSize: 20, weight: .bold)
+        ]
+
+        let buyAttributedString = NSAttributedString(string: "Confirm Buy", attributes: attributes)
+       
+        confirmButton.setAttributedTitle(buyAttributedString, for: .normal)
+    }
+    
+    func formatSellButton() {
+        let attributes: [NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.white,
+            .font: UIFont.systemFont(ofSize: 20, weight: .bold)
+        ]
+        let sellAttributedString = NSAttributedString(string: "Confirm Sell", attributes: attributes)
+        confirmButton.setAttributedTitle(sellAttributedString, for: .normal)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

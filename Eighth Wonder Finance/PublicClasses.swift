@@ -18,7 +18,6 @@ public class DataLoader {
     func load() {
         
         if let fileLocation = Bundle.main.url(forResource: "search", withExtension: "json") {
-            
             do {
                 let data = try Data(contentsOf: fileLocation)
                 let json = try? JSONSerialization.jsonObject(with: data, options:[])
@@ -28,8 +27,22 @@ public class DataLoader {
                 print(error)
             }
         }
+    }
+}
+
+public class WatchList {
     
+    @Published var defaultWatchList = [String]()
+    
+    init() {
+        createWatchList()
     }
     
-    
+    func createWatchList() {
+        self.defaultWatchList = ["MSFT", "AAPL", "AMZN", "GOOGL", "TSLA", "FB", "NVDA", "BRK.B",
+            "JPM", "JNJ", "UNH", "HD", "PG", "V", "BAC", "ADBE", "MA", "NFLX", "DIS", "PFE"]
+        
+        let defaults = UserDefaults.standard
+        defaults.set(defaultWatchList, forKey: "defaultWatchList")
+    }
 }

@@ -24,7 +24,7 @@
 		F54E7C01272645CD0056F7BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E7C00272645CD0056F7BA /* LoginViewController.swift */; };
 		F54E7C03272645F70056F7BA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E7C02272645F70056F7BA /* HomeViewController.swift */; };
 		F58243F7273859DB004FC193 /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = F58243F6273859DB004FC193 /* search.json */; };
-		F58243F92738603F004FC193 /* SearchDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58243F82738603F004FC193 /* SearchDataLoader.swift */; };
+		F58243F92738603F004FC193 /* PublicClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58243F82738603F004FC193 /* PublicClasses.swift */; };
 		F5AA1C82273776510024EECD /* stock_names.json in Resources */ = {isa = PBXBuildFile; fileRef = F5AA1C80273776510024EECD /* stock_names.json */; };
 		F5AA1C83273776510024EECD /* stock_symbols.json in Resources */ = {isa = PBXBuildFile; fileRef = F5AA1C81273776510024EECD /* stock_symbols.json */; };
 		F5AA1C8527377BEB0024EECD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AA1C8427377BEB0024EECD /* SearchViewController.swift */; };
@@ -82,7 +82,7 @@
 		F54E7C00272645CD0056F7BA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F54E7C02272645F70056F7BA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F58243F6273859DB004FC193 /* search.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
-		F58243F82738603F004FC193 /* SearchDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataLoader.swift; sourceTree = "<group>"; };
+		F58243F82738603F004FC193 /* PublicClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicClasses.swift; sourceTree = "<group>"; };
 		F5AA1C80273776510024EECD /* stock_names.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stock_names.json; sourceTree = "<group>"; };
 		F5AA1C81273776510024EECD /* stock_symbols.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stock_symbols.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		F5AA1C8427377BEB0024EECD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 				F5AA1C8427377BEB0024EECD /* SearchViewController.swift */,
 				F5DC5AE8272A27A8009BA7E8 /* TradeViewViewController.swift */,
 				F5DC5AEA272A28BA009BA7E8 /* ProfileViewController.swift */,
-				F58243F82738603F004FC193 /* SearchDataLoader.swift */,
+				F58243F82738603F004FC193 /* PublicClasses.swift */,
 				F54E7BD927263C0E0056F7BA /* Assets.xcassets */,
 				F54E7BDE27263C0E0056F7BA /* Info.plist */,
 			);
@@ -463,7 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5AA1C8527377BEB0024EECD /* SearchViewController.swift in Sources */,
-				F58243F92738603F004FC193 /* SearchDataLoader.swift in Sources */,
+				F58243F92738603F004FC193 /* PublicClasses.swift in Sources */,
 				F54E7C01272645CD0056F7BA /* LoginViewController.swift in Sources */,
 				F54E7BD127263C080056F7BA /* AppDelegate.swift in Sources */,
 				723744FD272C929100E0043D /* ResearchDetailViewController.swift in Sources */,

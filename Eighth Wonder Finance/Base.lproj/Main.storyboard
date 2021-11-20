@@ -226,9 +226,9 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycH-xz-nh5">
-                                <rect key="frame" x="170" y="782" width="74" height="31"/>
+                                <rect key="frame" x="161" y="782" width="92" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Gainers">
+                                <buttonConfiguration key="configuration" style="plain" title="Watch List">
                                     <color key="baseForegroundColor" red="0.0010295168029999999" green="0.7308628559" blue="0.42086243629999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -292,7 +292,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Company Descripton" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QER-Q6-bhe">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Company Descripton" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="QER-Q6-bhe">
                                 <rect key="frame" x="20" y="384.5" width="374" height="250"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -318,10 +318,31 @@
                                     <segue destination="GEJ-I5-bmS" kind="show" identifier="researchToBuySegue" id="fQ0-q6-eS2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcN-2J-824">
+                                <rect key="frame" x="82" y="722.5" width="250" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Nei-mr-Vp5"/>
+                                    <constraint firstAttribute="width" constant="250" id="XBk-CL-ziA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="sHV-Cx-Gqy"/>
+                                </constraints>
+                                <color key="tintColor" red="0.0010295168029999999" green="0.7308628559" blue="0.42086243629999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add to Watchlist" cornerStyle="capsule">
+                                    <backgroundConfiguration key="background">
+                                        <color key="strokeColor" red="0.0010295168029999999" green="0.7308628559" blue="0.42086243629999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="onResetButton:" destination="3UW-zI-eEh" eventType="touchUpInside" id="7Pb-7v-C4X"/>
+                                    <action selector="watchlistButton:" destination="d1K-nY-SI4" eventType="touchUpInside" id="YQ5-j7-3EC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aB5-yd-Nt6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="hcN-2J-824" firstAttribute="leading" secondItem="R3x-Xd-JvQ" secondAttribute="leading" id="1c5-Kz-1aR"/>
                             <constraint firstItem="aB5-yd-Nt6" firstAttribute="trailing" secondItem="QER-Q6-bhe" secondAttribute="trailing" constant="20" id="4eC-Kp-BvI"/>
                             <constraint firstItem="htj-DA-nt8" firstAttribute="leading" secondItem="aB5-yd-Nt6" secondAttribute="leading" constant="20" id="5jh-E0-dIn"/>
                             <constraint firstItem="aB5-yd-Nt6" firstAttribute="trailing" secondItem="1zc-u8-no2" secondAttribute="trailing" constant="10" id="5rY-KS-ktI"/>
@@ -335,6 +356,7 @@
                             <constraint firstItem="QER-Q6-bhe" firstAttribute="leading" secondItem="aB5-yd-Nt6" secondAttribute="leading" constant="20" id="QNE-03-iBG"/>
                             <constraint firstItem="1zc-u8-no2" firstAttribute="centerX" secondItem="kLQ-2c-1A7" secondAttribute="centerX" id="S4N-cK-5ww"/>
                             <constraint firstItem="R3x-Xd-JvQ" firstAttribute="top" secondItem="QER-Q6-bhe" secondAttribute="bottom" constant="20" id="SVn-Jr-ilO"/>
+                            <constraint firstItem="hcN-2J-824" firstAttribute="top" secondItem="R3x-Xd-JvQ" secondAttribute="bottom" constant="30" id="ZvE-bT-x8J"/>
                             <constraint firstItem="1zc-u8-no2" firstAttribute="leading" secondItem="aB5-yd-Nt6" secondAttribute="leading" constant="10" id="mgS-QY-rVz"/>
                             <constraint firstItem="R3x-Xd-JvQ" firstAttribute="centerX" secondItem="kLQ-2c-1A7" secondAttribute="centerX" id="vvI-hj-lCD"/>
                         </constraints>
@@ -344,6 +366,7 @@
                         <outlet property="companyDescriptionView" destination="QER-Q6-bhe" id="Mai-ch-1gq"/>
                         <outlet property="companyLogoImage" destination="0t6-6F-26z" id="PZ9-H7-UQ6"/>
                         <outlet property="companyNameLabel" destination="1zc-u8-no2" id="kW8-Ek-vdY"/>
+                        <outlet property="watchlistButtonOutlet" destination="hcN-2J-824" id="CaX-JK-YdO"/>
                         <outlet property="websiteLink" destination="htj-DA-nt8" id="iZu-hJ-fTM"/>
                     </connections>
                 </viewController>

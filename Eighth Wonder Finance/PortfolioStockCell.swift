@@ -1,17 +1,17 @@
 //
-//  ResearchStockCell.swift
+//  PortfolioStockCell.swift
 //  Eighth Wonder Finance
 //
-//  Created by James Lipe on 10/27/21.
+//  Created by Adrian Lujo on 11/20/21.
 //
 
 import UIKit
 
-class ResearchStockCell: UITableViewCell {
-    
+class PortfolioStockCell: UITableViewCell {
+
     @IBOutlet weak var stockName: UILabel!
-    @IBOutlet weak var currentPrice: UILabel!
-    @IBOutlet weak var percentChange: UILabel!
+    @IBOutlet weak var shareQuantity: UILabel!
+    @IBOutlet weak var shareValue: UILabel!
     @IBOutlet weak var stockLogo: UIImageView!
     
     override func awakeFromNib() {

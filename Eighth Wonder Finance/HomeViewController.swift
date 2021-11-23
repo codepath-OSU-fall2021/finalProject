@@ -99,6 +99,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var stocks: [StockInfo] = []
     var ownedStockArray = [OwnedStockInfo]()
     var logos: [String:Logo] = [:]
+    var numberOfShares: Int = 0
+    var sharePrice: Float = 0
+    var symbol: String = "MSFT"
+    var quantityHeld: Int = 0
+    var ownedStockBool: Bool = false
     
 
     @IBOutlet weak var balanceLabel: UILabel!
@@ -215,14 +220,21 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             } else if let objects = objects {
                 // The find succeeded.
                 print("Successfully retrieved \(objects.count) stocks")
-                for i in 0 ..< objects.count {
-                    self.ownedStockArray.insert(OwnedStockInfo(symbol: objects[i]["symbol"] as! String, cost: objects[i]["amountSpent"] as! Float, quantity: objects[i]["quantityHeld"] as! Int), at: i)
+                for i in 0 ..< objects.count{
+                    print(i)
+                    if ((objects[i]["quantityHeld"] as? Int) != 0){
+                        self.ownedStockArray.append(OwnedStockInfo(symbol: objects[i]["symbol"] as! String, cost: objects[i]["amountSpent"] as! Float, quantity: objects[i]["quantityHeld"] as! Int))}
+                    else if let error = error {
+                        // Log details of the failure
+                        print(error.localizedDescription)
+                    }
                  
                 }
             }
         }
     }
     
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "homeToBuySegue" {
             let destination = segue.destination as! TradeViewViewController
@@ -283,14 +295,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
         let user = PFUser.current()
         
-        if user != nil {
+        
             do {
                 let query = try PFQuery.getUserObject(withId: user!.objectId!)
                 self.user = query
             } catch {
                 print(error)
             }
-        }
+        
         
         getStockInfo(successCallback: handleStockInfo)
         
@@ -312,10 +324,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        do {
+            let query = try PFQuery.getUserObject(withId: user!.objectId!)
+            self.user = query
+        } catch {
+            print(error)}
         getStockInfo(successCallback: handleStockInfo)
         queryOwnedStocks()
         tableView.delegate = self
         tableView.dataSource = self
+        
 
     }
     

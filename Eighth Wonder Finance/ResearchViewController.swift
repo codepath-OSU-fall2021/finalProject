@@ -188,8 +188,13 @@ class ResearchViewController: UIViewController, UITableViewDelegate, UITableView
         if stockResearchType == "watchlist" {
             let defaults = UserDefaults.standard
             var watchList = [String]()
-            watchList = defaults.array(forKey: "defaultWatchList") as! [String]
-            
+            if defaults.array(forKey: "defaultWatchList") as? [String] == nil {
+                WatchList()
+                watchList = defaults.array(forKey: "defaultWatchList") as! [String]
+            } else {
+                watchList = defaults.array(forKey: "defaultWatchList") as! [String]
+            }
+        
             var stockResponseArray: [StockInfo] = []
             
             for watchStock in watchList {

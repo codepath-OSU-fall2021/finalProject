@@ -54,7 +54,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @objc func searchRecords(_ textField: UITextField) {
         self.symbols.removeAll()
         if textField.text?.count != 0 {
-            searchBarLabel.text = "Select From Below:"
+            searchBarLabel.text = "Select from the list below:"
             searchTableView.isHidden = false
             for symbol in originalSymbols {
                 if let symbolToSearch = textField.text {
@@ -65,7 +65,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
         } else {
-            searchBarLabel.text = "Search for Company:"
+            searchBarLabel.text = "Search for a company:"
             searchTableView.isHidden = true
             for symbol in originalSymbols {
                 symbols.append(symbol)

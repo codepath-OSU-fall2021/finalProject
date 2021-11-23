@@ -88,6 +88,8 @@ Optional:
 
 Here's a walkthrough of implemented user stories:
 
+![8thWonder3](https://user-images.githubusercontent.com/81477294/142957237-acae88c0-3677-4450-baa1-e9feaa6aa878.gif)
+![8thWonder4](https://user-images.githubusercontent.com/81477294/142957260-0248cf4d-3830-4c4e-b926-6cbf8b9545b7.gif)
 ![Eighth Wonder](https://user-images.githubusercontent.com/81477294/140847262-4ca36c53-b9fa-4532-b6e2-f4490665ef06.gif)
 ![Eighth Wonder](https://user-images.githubusercontent.com/81477294/140848737-259ae235-9461-44a5-b161-5fca96b52859.gif)
 

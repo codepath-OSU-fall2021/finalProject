@@ -45,8 +45,8 @@ An application where users can simulate trading stocks with a starting balance o
   * [x] User login to the application
   * [x] User can signup for the application
 * Home Screen
-  * [ ] User can view the current balance of their portfolio
-  * [ ] User can click on a stock with a segue to the trade page to sell
+  * [x] User can view the current balance of their portfolio
+  * [x] User can click on a stock with a segue to the trade page to sell
   * [ ] User can see the profit and loss of the shares they own
 * Research Screen
    * [x] User can research stock information by ticker symbol or company name
@@ -68,7 +68,7 @@ An application where users can simulate trading stocks with a starting balance o
 
 **Tab Navigation** (Tab to Screen)
 
-* [ ] Home tab
+* [x] Home tab
 * [x] Research tab
 * [x] Explore tab
 * [x] Profile/Settings tab
@@ -76,7 +76,7 @@ An application where users can simulate trading stocks with a starting balance o
 **Flow Navigation** (Screen to Screen)
 
 * [x] Login -> Main screen
-* [ ] Home page -> User can sell shares of a stock they own
+* [x] Home page -> User can sell shares of a stock they own
 * [x] Research page -> User can search for and segue to the Trade view to buy or sell shares of a stock
 * [x] Explore page - > User can view stock information and segue to the Trade view
 * [x] Settings - > User can log-out, toggle dark mode, or reset the game
